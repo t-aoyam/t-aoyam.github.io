@@ -131,14 +131,14 @@ title: Home
   <p>Most recent publications on <a href="https://scholar.google.com/citations?user=5ygiTwsAAAAJ" target="_blank">Google Scholar</a>.</p>
 
   <ul class="tab-nav">
-    <li><div class="button active" data-ref="#papers-sel">Selected and Recent Papers</div></li>
-    <li><div class="button" data-ref="#papers-all">All</div></li>    
+    <!--li><div class="button" data-ref="#papers-sel">Selected and Recent Papers</div></li-->
+    <li><div class="button active" data-ref="#papers-all">All</div></li>    
     <li><div class="button" data-ref="#papers-NLP">NLP</div></li>
     <li><div class="button" data-ref="#papers-SLA">SLA</div></li>
   </ul>
 
   <div class="tab-content">
-
+<!--
     <div class="tab-pane active" id="papers-sel">
       {% assign papers = site.data.publications.papers | where: "selected", "y" %}
       {% for paper in papers %}
@@ -168,7 +168,7 @@ title: Home
         </div>
       {% endfor %}
     </div>
-
+-->
     <!-- All PAPERS -->
     <div class="tab-pane" id="papers-all">
       {% assign papers = site.data.publications.papers %}
@@ -232,7 +232,7 @@ title: Home
     <!-- SLA PAPERS -->
     <div class="tab-pane" id="papers-SLA">
       {% assign sla_papers = site.data.publications.papers | where: "sla", "y" %}
-      {% for paper in ml_papers %}
+      {% for paper in sla_papers %}
         <div class="paper">
           <p class="title"><b>{{ paper.title }}</b>
             {% if paper.paper_pdf %}
