@@ -200,38 +200,7 @@ title: Home
         </div>
       {% endfor %}
     </div>
-    
 
-    <!-- ML PAPERS -->
-    <div class="tab-pane" id="papers-ML">
-      {% assign ml_papers = site.data.publications.papers | where: "statsml", "y" %}
-      {% for paper in ml_papers %}
-        <div class="paper">
-          <p class="title"><b>{{ paper.title }}</b>
-            {% if paper.paper_pdf %}
-              <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">PDF</a>
-            {% endif %}
-            {% if paper.slides %}
-              <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-            {% endif %}
-            {% if paper.poster %}
-              <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-            {% endif %}
-            {% if paper.video %}
-              <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-            {% endif %}
-            {% if paper.code %}
-              <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-            {% endif %}
-          </p>
-          <p>{{ paper.authors }}</p>
-          <p><i>{{ paper.venue }}</i></p>
-           <div class="paper-buttons">
-
-          </div>
-        </div>
-      {% endfor %}
-    </div>
 
     <!-- NLP PAPERS -->
     <div class="tab-pane" id="papers-NLP">
@@ -259,11 +228,12 @@ title: Home
           <p><i>{{ paper.venue }}</i></p>
         </div>
       {% endfor %}
-    </div>
-    <!-- Bio PAPERS -->
-    <div class="tab-pane" id="papers-Bio">
-      {% assign bio_papers = site.data.publications.papers | where: "bio", "y" %}
-      {% for paper in bio_papers %}
+    </div>    
+
+    <!-- SLA PAPERS -->
+    <div class="tab-pane" id="papers-SLA">
+      {% assign sla_papers = site.data.publications.papers | where: "sla", "y" %}
+      {% for paper in ml_papers %}
         <div class="paper">
           <p class="title"><b>{{ paper.title }}</b>
             {% if paper.paper_pdf %}
@@ -284,10 +254,13 @@ title: Home
           </p>
           <p>{{ paper.authors }}</p>
           <p><i>{{ paper.venue }}</i></p>
+           <div class="paper-buttons">
+
+          </div>
         </div>
       {% endfor %}
     </div>
-    
+ 
   </div>
 </div>
 
