@@ -4,4 +4,4 @@ includes:    ./_includes
 
 collections:
   projects:
-    output: true
+    output: false
