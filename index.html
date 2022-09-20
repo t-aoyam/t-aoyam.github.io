@@ -6,7 +6,7 @@ title: Home
 <div class="docs-section" id="bio">
   <h4>Bio</h4>
   <p>
-    I am currently an assistant professor at the computer science department in Stanford university. 
+    I am currently a Ph.D. student in computational Linguistics at Georgetown University, where I belong to <a href=https://gucl.georgetown.edu/ target="_blank">GUCL</a> and <a href=http://nert.georgetown.edu/ target="_blank">NERT</a>. 
 </p>
   <p>
     
@@ -21,37 +21,15 @@ title: Home
 
   </p>
   <p>
-    Previously, I was a post-doc at Stanford working for <a href=https://web.stanford.edu/~jduchi/ target="_blank">John C. Duchi</a> and <a href=https://cs.stanford.edu/~pliang/ target="_blank">Percy Liang</a> on tradeoffs between the average and worst-case performance of machine learning models. Before my post-doc, I was a graduate student at MIT co-advised by <a href=https://people.csail.mit.edu/tommi/ target="_blank">Tommi Jaakkola</a> and <a href=http://cgs.csail.mit.edu/ target="_blank">David Gifford</a> and a undergraduate student at Harvard in statistics and math advised by <a href=http://www.people.fas.harvard.edu/~airoldi/ target="_blank">Edoardo Airoldi</a>.
+    Previously, I obtained a B.A. in Liberal Arts from Soka University of America, where my main focus was Psychology and Economics (but I wrote my thesis on a topic related Second Language Acquisition). Subsequently, I pursued an M.A. in Teaching English to Speakers of Other Languages (TESOL) at Michigan State University under the supervision of <a href=https://sites.google.com/site/sandracdeshors/home target="_blank">Sandra Deshors</a> and <a href=https://www.egr.msu.edu/people/profile/kristenj target="_blank">Kristen Johnson</a>, where I wrote 
   </p>
 
 </div>
 
-
-<div class="docs-section" id="people">
-  <h4>Advisees</h4>
-
-
-      {% assign current_people = site.data.students.students | where: "category", "current" %}
-      {% for person in current_people %}
-        <div class="paper">
-          <p style="line-height: 0.5">
-            {% if person.link %}
-            <a href="{{ person.link | prepend: site.baseurl }}" target="_blank"><b>{{ person.name }}</b></a>
-            {% else %}
-            <b>{{ person.name }}</b>
-              
-              {% endif %}
-               ({{ person.time }}) <i>{{ person.place }}</i>
-          </p>
-        </div>
-      {% endfor %}
-</div>
-
-
 <!-- ========== PROJECTS ========== -->
   <h4>Recent Research Areas</h4>
 
-<div class="docs-section" id="projects">
+<!--div class="docs-section" id="projects"-->
 <!--
   <ul class="tab-nav">
     <li><div class="button active" data-ref="#proj-cur">Current Projects</div></li>
