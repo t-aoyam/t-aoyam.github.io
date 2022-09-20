@@ -1,7 +1,7 @@
 papers:
   - title: "Probe-Less Probing of BERT’s Layer-Wise Linguistic Knowledge with Masked Word Prediction."
     authors: "Tatsuya Aoyama, Nathan Schneider"
-    venue: "North American Chapter of the Association for COmputational Linguistics Student Research Workshop (NAACL-SRW 2022)"
+    venue: "North American Chapter of the Association for Computational Linguistics Student Research Workshop (NAACL-SRW 2022)"
     paper_pdf: https://aclanthology.org/2022.naacl-srw.25/
     nlp: y
     selected: y
