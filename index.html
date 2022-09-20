@@ -188,7 +188,7 @@ title: Home
   {% assign current_talks = site.data.talks.talks | where: "category", "current" %}
   {% for talk in current_talks %}
   <div class="talk">
-    <p class="title"><b>{{ talk.name }}</b> ({{ talk.time }}): <a href={{talk.link}} target="_blank">{{ talk.title }}</a></p>
+    <p class="title"><b>{{ talk.name }}</b> ({{ talk.time }}): <!--a href={{talk.link}} target="_blank"-->{{ talk.title }}<!--/a--></p>
   </div>
   {% endfor %}
 </div>
