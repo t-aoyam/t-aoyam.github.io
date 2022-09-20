@@ -1,29 +1,29 @@
 papers:
-  - title: "Diffusion-LM Improves Controllable Text Generation"
-    authors: "Lisa Li, John Thickstun, Ishaan Gulrajani, Percy Liang, Tatsunori B Hashimoto"
-    venue: "ArXiv preprint"
-    paper_pdf: https://arxiv.org/pdf/2205.14217.pdf
+  - title: "Probe-Less Probing of BERT’s Layer-Wise Linguistic Knowledge with Masked Word Prediction."
+    authors: "Tatsuya Aoyama, Nathan Schneider"
+    venue: "North American Chapter of the Association for COmputational Linguistics Student Research Workshop (NAACL-SRW 2022)"
+    paper_pdf: https://aclanthology.org/2022.naacl-srw.25/
     nlp: y
     selected: y
-  
-  - title: "Undersampling is a Minimax Optimal Robustness Intervention in Nonparametric Classification"
-    authors: "Niladri Chatterji, Saminul Haque, Tatsunori B Hashimoto"
-    venue: "ArXiv preprint"
-    paper_pdf: https://arxiv.org/pdf/2205.13094.pdf
+
+  - title: "Revisiting Layer-Wise Linguistic Knowledge with Masked Word Prediction."
+    authors: "Tatsuya Aoyama, Nathan Schneider"
+    venue: "Mid-Atlantic Student Colloquium on Speech, Language and Learning (MASC-SLL 2022)"
+    paper_pdf:
     statsml: y
     selected: y
     
-  - title: "TempLM: Distilling Language Models into Template-Based Generators"
-    authors: "Tianyi Zhang, Mina Lee, Lisa Li, Ende Shen, Tatsunori B Hashimoto"
-    venue: "ArXiv preprint"
-    paper_pdf: https://arxiv.org/pdf/2205.11055.pdf
+  - title: " International Students’ Willingness to Communicate in English as a Second Language : Effects of L2 Self-Confidence, Acculturation, and Motivational Types"
+    authors: "Tatsuya Aoyama, Tomoko Takahashi"
+    venue: "Journal of International Students 10(3)"
+    paper_pdf: https://www.ojed.org/index.php/jis/article/view/730
     nlp: y
     selected: y
     
-  - title: "Jury learning: Integrating dissenting voices into machine learning models"
-    authors: "Mitchell Gordon, Michelle Lam, Joon Park, Kayur Patel, Jeff Hancock, Tatsunori B Hashimoto, Michael Bernstein"
-    venue: "Conference on Human Factors in Computing Systems (CHI 2022, Best paper)"
-    paper_pdf: https://dl.acm.org/doi/pdf/10.1145/3491102.3502004
+  - title: "A Corpus-based Multifactorial Analysis of Japanese and Chinese Speakers’ English Article Use : Quantifying the Deviation Using MuPDAR"
+    authors: "Tatsuya Aoyama"
+    venue: "Unpublished M.A. Thesis"
+    paper_pdf: https://d.lib.msu.edu/etd/48570
     nlp: y
     selected: y
 
@@ -257,8 +257,7 @@ papers:
 
   - title: "Metric recovery from directed unweighted graphs"
     authors: "Tatsunori B Hashimoto, Yi Sun, Tommi S Jaakkola"
-    venue: "Artificial Intelligence and Statistics (AISTATS 2015), (best poster at 
-NeurIPS 2014 workshop on networks)"
+    venue: "Artificial Intelligence and Statistics (AISTATS 2015), (best poster at NeurIPS 2014 workshop on networks)"
     paper_pdf: "http://proceedings.mlr.press/v38/hashimoto15.html"
     selected: y
     statsml: y
