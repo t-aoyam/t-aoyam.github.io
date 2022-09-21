@@ -131,7 +131,7 @@ title: Home
               {% endif %}
           </p>
 		  {% assign authors = paper.authors;
-			 assign authors = authors.replace(/(Tatsuya Aoyama)/, "<strong>$1<strong>)"; %}
+			 assign authors = authors.replace(/(Tatsuya Aoyama)/, "<b>$1</b>)"; %}
           <p>{{ authors }}</p>
           <!--p>{{ paper.authors }}</p-->
           <p><i>{{ paper.venue }}</i></p>
