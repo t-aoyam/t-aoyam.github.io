@@ -130,8 +130,8 @@ title: Home
               <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
               {% endif %}
           </p>
-		  {% assign authors = {{paper.authors}};
-			 assign authors = authors.replace((Tatsuya Aoyama), "<strong>$1<strong>)"; %}
+		  {% assign authors = paper.authors;
+			 assign authors = authors.replace(/(Tatsuya Aoyama)/, "<strong>$1<strong>)"; %}
           <p>{{ authors }}</p>
           <!--p>{{ paper.authors }}</p-->
           <p><i>{{ paper.venue }}</i></p>
