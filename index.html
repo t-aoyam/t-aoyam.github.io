@@ -79,13 +79,13 @@ title: Home
     <!-- All PAPERS -->
 
     <div class="tab-pane active" id="papers-all">
+	  {% assign papers = site.data.publications.papers %}
 	  {% assign years = "2020" %}
       {% for paper in papers %}
 	  {% assign year = paper.year | prepend: "," %}
 	  {% assign years = years | append: year %}
       {% endfor %}
       {% assign  year_list = years | split: "," | uniq | sort | reverse %}
-	  {% assign papers = site.data.publications.papers %}
 	  {% for year in year_list %}
 		<h5>{{ year }}</h5>
 		  {% for paper in papers %}
@@ -122,13 +122,13 @@ title: Home
 
     <!-- NLP PAPERS -->
     <div class="tab-pane" id="papers-NLP">
+      {% assign nlp_papers = site.data.publications.papers | where: "nlp", "y" %}
 	  {% assign years = "2020" %}
-      {% for paper in papers %}
+      {% for paper in nlp_papers %}
 	  {% assign year = paper.year | prepend: "," %}
 	  {% assign years = years | append: year %}
       {% endfor %}
       {% assign  year_list = years | split: "," | uniq | sort | reverse %}
-      {% assign nlp_papers = site.data.publications.papers | where: "nlp", "y" %}
 	  {% for year in year_list %}
 		<h5>{{ year }}</h5>
 		  {% for paper in nlp_papers %}
@@ -164,13 +164,13 @@ title: Home
 
     <!-- SLA PAPERS -->
     <div class="tab-pane" id="papers-SLA">
+      {% assign sla_papers = site.data.publications.papers | where: "sla", "y" %}
 	  {% assign years = "2020" %}
-      {% for paper in papers %}
+      {% for paper in sla_papers %}
 	  {% assign year = paper.year | prepend: "," %}
 	  {% assign years = years | append: year %}
       {% endfor %}
       {% assign  year_list = years | split: "," | uniq | sort | reverse %}
-      {% assign sla_papers = site.data.publications.papers | where: "sla", "y" %}
 	  {% for year in year_list %}
 		<h5>{{ year }}</h5>
 		  {% for paper in sla_papers %}
