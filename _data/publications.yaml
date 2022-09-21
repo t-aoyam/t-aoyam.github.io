@@ -1,5 +1,6 @@
 papers:
   - title: "Probe-Less Probing of BERT’s Layer-Wise Linguistic Knowledge with Masked Word Prediction."
+    year: "2022"
     authors: "Tatsuya Aoyama, Nathan Schneider"
     venue: "North American Chapter of the Association for Computational Linguistics Student Research Workshop (NAACL-SRW 2022)"
     paper_pdf: https://aclanthology.org/2022.naacl-srw.25/
@@ -7,6 +8,7 @@ papers:
     selected: y
 
   - title: "Revisiting Layer-Wise Linguistic Knowledge with Masked Word Prediction."
+    year: "2022"
     authors: "Tatsuya Aoyama, Nathan Schneider"
     venue: "Mid-Atlantic Student Colloquium on Speech, Language and Learning (MASC-SLL 2022)"
     paper_pdf:
@@ -14,6 +16,7 @@ papers:
     selected: y
     
   - title: " International Students’ Willingness to Communicate in English as a Second Language : Effects of L2 Self-Confidence, Acculturation, and Motivational Types"
+    year: "2020"
     authors: "Tatsuya Aoyama, Tomoko Takahashi"
     venue: "Journal of International Students 10(3)"
     paper_pdf: https://www.ojed.org/index.php/jis/article/view/730
@@ -21,6 +24,7 @@ papers:
     selected: y
     
   - title: "A Corpus-based Multifactorial Analysis of Japanese and Chinese Speakers’ English Article Use : Quantifying the Deviation Using MuPDAR"
+    year: "2020"
     authors: "Tatsuya Aoyama"
     venue: "Unpublished M.A. Thesis"
     paper_pdf: https://d.lib.msu.edu/etd/48570
