@@ -77,17 +77,17 @@ title: Home
     </div>
 -->
     <!-- All PAPERS -->
-	{% assign years = "2020" %}
-    {% for paper in papers %}
-	  {% assign year = paper.year | prepend: "," %}
-	  {% assign years = years | append: year %}
-    {% endfor %}
-    {% assign  year_list = years | split: "," | uniq | sort | reverse %}
 
     <div class="tab-pane active" id="papers-all">
+	  {% assign years = "2020" %}
+      {% for paper in papers %}
+	  {% assign year = paper.year | prepend: "," %}
+	  {% assign years = years | append: year %}
+      {% endfor %}
+      {% assign  year_list = years | split: "," | uniq | sort | reverse %}
 	  {% assign papers = site.data.publications.papers %}
 	  {% for year in year_list %}
-		<h5><b>{{ year }}</b></h5>
+		<h5>{{ year }}</h5>
 		  {% for paper in papers %}
 			{% if paper.year == year %}
 				<div class="paper">
@@ -122,9 +122,15 @@ title: Home
 
     <!-- NLP PAPERS -->
     <div class="tab-pane" id="papers-NLP">
+	  {% assign years = "2020" %}
+      {% for paper in papers %}
+	  {% assign year = paper.year | prepend: "," %}
+	  {% assign years = years | append: year %}
+      {% endfor %}
+      {% assign  year_list = years | split: "," | uniq | sort | reverse %}
       {% assign nlp_papers = site.data.publications.papers | where: "nlp", "y" %}
 	  {% for year in year_list %}
-		<h5><b>{{ year }}</b></h5>
+		<h5>{{ year }}</h5>
 		  {% for paper in nlp_papers %}
 			{% if paper.year == year %}
 				<div class="paper">
@@ -158,9 +164,15 @@ title: Home
 
     <!-- SLA PAPERS -->
     <div class="tab-pane" id="papers-SLA">
+	  {% assign years = "2020" %}
+      {% for paper in papers %}
+	  {% assign year = paper.year | prepend: "," %}
+	  {% assign years = years | append: year %}
+      {% endfor %}
+      {% assign  year_list = years | split: "," | uniq | sort | reverse %}
       {% assign sla_papers = site.data.publications.papers | where: "sla", "y" %}
 	  {% for year in year_list %}
-		<h5><b>{{ year }}</b></h5>
+		<h5>{{ year }}</h5>
 		  {% for paper in sla_papers %}
 			{% if paper.year == year %}
 				<div class="paper">
