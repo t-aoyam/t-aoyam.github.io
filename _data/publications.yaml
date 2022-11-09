@@ -3,7 +3,7 @@ papers:
     year: "2022"
     authors: "Tatsuya Aoyama"
     venue: "11th Natural Language Processing for Computer-Assisted Language Learning (NLP4CALL) workshop 2022"
-    paper_pdf:
+#    paper_pdf:
     nlp: y
     sla: y
     selected: y
