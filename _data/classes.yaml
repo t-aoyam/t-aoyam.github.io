@@ -1,4 +1,10 @@
 classes:
+    - name: "LING/COSC-572"
+      time: "Spring 2023"
+      title: "Empirical Methods in Natural Language Processing"
+      category: "current"
+      link: "https://people.cs.georgetown.edu/cosc572/s22/index.html"
+
     - name: "LING-001"
       time: "Fall 2021, Spring 2022"
       title: "Introduction to Language"
