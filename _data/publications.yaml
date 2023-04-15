@@ -1,14 +1,12 @@
 papers:
-- title: "Corpus-Based Investigation of the Markedness and Frequency of Japanese Passives in Contemporary Written Japanese."
+  - title: "Corpus-Based Investigation of the Markedness and Frequency of Japanese Passives in Contemporary Written Japanese."
     year: "2023"
     authors: "Tatsuya Aoyama"
     venue: "Society for Computation in Linguistics (SCiL) 2023"
     paper_pdf: https://ecp.ep.liu.se/index.php/sltc/article/view/573
     nlp: y
-    sla: n
-    selected: n
 
-- title: "Comparing Native and Learner Englishes Using a Large Pre-trained Language Model."
+  - title: "Comparing Native and Learner Englishes Using a Large Pre-trained Language Model."
     year: "2022"
     authors: "Tatsuya Aoyama"
     venue: "11th Natural Language Processing for Computer-Assisted Language Learning (NLP4CALL) workshop 2022"
