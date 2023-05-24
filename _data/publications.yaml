@@ -2,7 +2,7 @@ papers:
   - title: "GENTLE: A Genre-Diverse Multilayer Challenge Set for English NLP and Linguistic Evaluation."
     year: "2023"
     authors: "Tatsuya Aoyama, Shabnam Behzad, Luke Gessler, Lauren Levine, Jessica Lin, Yang Janet Liu, Siyao Peng, Yilun Zhu and Amir Zeldes"
-    venue: "The 17th Linguistic Annotation Workshop (LAW-XVII) @ ACL 2023"
+    venue: "The 17th Linguistic Annotation Workshop (LAW-XVII), Association for Computational Linguistics (ACL) 2023"
     paper_pdf: https://ecp.ep.liu.se/index.php/sltc/article/view/573
     nlp: y
 
