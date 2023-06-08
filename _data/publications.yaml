@@ -10,7 +10,7 @@ papers:
     year: "2023"
     authors: "Tatsuya Aoyama"
     venue: "Society for Computation in Linguistics (SCiL) 2023"
-    paper_pdf:
+    paper_pdf: https://scholarworks.umass.edu/scil/vol6/iss1/45/
     nlp: y
 
   - title: "Comparing Native and Learner Englishes Using a Large Pre-trained Language Model."
