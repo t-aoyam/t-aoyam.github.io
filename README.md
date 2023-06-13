@@ -1,4 +1,4 @@
-# My website (based on Tatsu Hashimoto's websited based on martin saveski's template)
+# My website (based on Tatsunori Hashimoto's websited based on martin saveski's template)
 
 ## Things to change
 baseurl in _config.yml
