@@ -1,7 +1,14 @@
 papers:
+  - title: "What’s Hard in RST Parsing? Predictive Models for Error Analysis."
+    year: "2023"
+    authors: "Yang Janet Liu, Tatsuya Aoyama, and Amir Zeldes"
+    venue: "Proceedings of the 24th Annual Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL), Prague, Czechia. Association for Computational Linguistics."
+    paper_pdf: 
+    nlp: y
+
   - title: "GENTLE: A Genre-Diverse Multilayer Challenge Set for English NLP and Linguistic Evaluation."
     year: "2023"
-    authors: "Tatsuya Aoyama, Shabnam Behzad, Luke Gessler, Lauren Levine, Jessica Lin, Yang Janet Liu, Siyao Peng, Yilun Zhu and Amir Zeldes"
+    authors: "Tatsuya Aoyama, Shabnam Behzad, Luke Gessler, Lauren Levine, Jessica Lin, Yang Janet Liu, Siyao Peng, Yilun Zhu, and Amir Zeldes"
     venue: "The 17th Linguistic Annotation Workshop (LAW-XVII), Association for Computational Linguistics (ACL) 2023"
     paper_pdf: https://arxiv.org/abs/2306.01966
     nlp: y
