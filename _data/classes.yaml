@@ -1,11 +1,12 @@
 classes:
     - name: "LING/COSC-572"
-      time: "<a href='assets/ta-evals/COSC_572_TA_Spring_2023.html' target='_blank'>Spring 2023</a>, Spring 2024"
+      time: "Spring 2023 <a href='assets/ta-evals/COSC_572_TA_Spring_2023.html' target='_blank'>[evaluation]</a>, Spring 2024"
       title: "Empirical Methods in Natural Language Processing"
       category: "current"
       link: "https://people.cs.georgetown.edu/cosc572/s23/index.html"
 
     - name: "LING-001"
+      time: "Fall 2021 <a href='assets/ta-evals/LING_101_TA_Fall_2021.htm' target='_blank'>[evaluation]</a>, Spring 2022 <a href='assets/ta-evals/LING_101_TA_Spring_2022.htm' target='_blank'>[evaluation]</a>"    
       time: "Fall 2021, Spring 2022"
       title: "Introduction to Language"
       category: "current"
