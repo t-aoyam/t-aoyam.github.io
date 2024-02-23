@@ -24,7 +24,7 @@ papers:
     year: "2023"
     authors: "Yang Janet Liu, Tatsuya Aoyama, and Amir Zeldes"
     venue: "Proceedings of the 24th Annual Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL), Prague, Czechia. Association for Computational Linguistics."
-    paper_pdf: 
+    paper_pdf: https://aclanthology.org/2023.sigdial-1.3/
     nlp: y
 
   - title: "GENTLE: A Genre-Diverse Multilayer Challenge Set for English NLP and Linguistic Evaluation."
