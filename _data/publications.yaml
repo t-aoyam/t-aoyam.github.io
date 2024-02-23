@@ -31,7 +31,7 @@ papers:
     year: "2023"
     authors: "Tatsuya Aoyama, Shabnam Behzad, Luke Gessler, Lauren Levine, Jessica Lin, Yang Janet Liu, Siyao Peng, Yilun Zhu, and Amir Zeldes"
     venue: "The 17th Linguistic Annotation Workshop (LAW-XVII), Association for Computational Linguistics (ACL) 2023"
-    paper_pdf: https://arxiv.org/abs/2306.01966
+    paper_pdf: https://aclanthology.org/2023.law-1.17/
     nlp: y
 
   - title: "Corpus-Based Investigation of the Markedness and Frequency of Japanese Passives in Contemporary Written Japanese."
