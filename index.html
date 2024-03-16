@@ -209,31 +209,6 @@ title: Home
 </div>
 
 
-
-<div class="docs-section" id="teaching">
-  <h4>Teaching</h4>
-  {% assign current_classes = site.data.classes.classes | where: "category", "current" %}
-  {% for class in current_classes %}
-  <div class="class">
-    <p class="title"><b>{{ class.name }}</b> ({{ class.time }}): <a href={{class.link}} target="_blank">{{ class.title }}</a></p>
-  </div>
-  {% endfor %}
-</div>
-
-
-<div class="docs-section" id="talks">
-  <h4>Talks and slides</h4>
-  {% assign current_talks = site.data.talks.talks | where: "category", "current" %}
-  {% for talk in current_talks %}
-  <div class="talk">
-    <p class="title"><b>{{ talk.name }}</b> ({{ talk.time }}): <!--a href={{talk.link}} target="_blank"-->{{ talk.title }}<!--/a--></p>
-  </div>
-  {% endfor %}
-</div>
-
-
-
-
 <!-- ========== RESUME ========== -->
 <div class="docs-section" id="experience">
   <h4>Experience</h4>
@@ -258,6 +233,29 @@ title: Home
   </ul>
 </div>
 </div>
+
+
+<div class="docs-section" id="talks">
+  <h4>Talks</h4>
+  {% assign current_talks = site.data.talks.talks | where: "category", "current" %}
+  {% for talk in current_talks %}
+  <div class="talk">
+    <p class="title"><b>{{ talk.name }}</b> ({{ talk.time }}): <!--a href={{talk.link}} target="_blank"-->{{ talk.title }}<!--/a--></p>
+  </div>
+  {% endfor %}
+</div>
+
+
+<div class="docs-section" id="teaching">
+  <h4>Teaching</h4>
+  {% assign current_classes = site.data.classes.classes | where: "category", "current" %}
+  {% for class in current_classes %}
+  <div class="class">
+    <p class="title"><b>{{ class.name }}</b> ({{ class.time }}): <a href={{class.link}} target="_blank">{{ class.title }}</a></p>
+  </div>
+  {% endfor %}
+</div>
+
 
 <!-- ========= ACKNOWLEDGEMENT ========== -->
 <div class="docs-section" id="ack">
