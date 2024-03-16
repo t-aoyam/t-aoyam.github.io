@@ -1,4 +1,12 @@
 papers:
+#  - title: "Avoiding Taylor Swift: Identifying Fairness Issues in Automatically Generated Testing Content."
+#    year: "2024"
+#    authors: "Kevin Stowe, Benny Longwill, Alyssa Francis, Tatsuya Aoyama, Debanjan Ghosh, Swapna Somasundaran"
+#    venue: "Building Educational Applications (BEA)."
+#    paper_pdf: 
+#    code: 
+#    nlp: y
+#
 #  - title: "RST++: A Signaled Graph Theory of Discourse Relations and Organization."
 #    year: "2024"
 #    authors: "Amir Zeldes, Tatsuya Aoyama, Janet Yang Liu, Siyao Peng, Debopam Das, and Luke Gessler"
@@ -34,6 +42,7 @@ papers:
     authors: "Tatsuya Aoyama, Shabnam Behzad, Luke Gessler, Lauren Levine, Jessica Lin, Yang Janet Liu, Siyao Peng, Yilun Zhu, and Amir Zeldes"
     venue: "The 17th Linguistic Annotation Workshop (LAW-XVII), Association for Computational Linguistics (ACL) 2023"
     paper_pdf: https://aclanthology.org/2023.law-1.17/
+    code: https://github.com/gucorpling/gentle
     nlp: y
 
   - title: "Corpus-Based Investigation of the Markedness and Frequency of Japanese Passives in Contemporary Written Japanese."
