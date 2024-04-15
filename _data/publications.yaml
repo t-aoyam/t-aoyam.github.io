@@ -7,13 +7,13 @@ papers:
 #    code: 
 #    nlp: y
 #
-#  - title: "RST++: A Signaled Graph Theory of Discourse Relations and Organization."
-#    year: "2024"
-#    authors: "Amir Zeldes, Tatsuya Aoyama, Janet Yang Liu, Siyao Peng, Debopam Das, and Luke Gessler"
-#    venue: "Computational Linguistics"
-#    paper_pdf: 
-#    nlp: y
-#
+  - title: "eRST: A Signaled Graph Theory of Discourse Relations and Organization."
+    year: "2024"
+    authors: "Amir Zeldes, Tatsuya Aoyama, Janet Yang Liu, Siyao Peng, Debopam Das, and Luke Gessler"
+    venue: "arxiv preprint"
+    paper_pdf: https://arxiv.org/abs/2403.13560
+    nlp: y
+
   - title: "J-SNACS: Adposition and Case Supersenses for Japanese Joshi."
     year: "2024"
     authors: "Tatsuya Aoyama, Chihiro Taguchi, and Nathan Schneider"
