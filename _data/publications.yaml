@@ -1,12 +1,12 @@
 papers:
-#  - title: "Avoiding Taylor Swift: Identifying Fairness Issues in Automatically Generated Testing Content."
-#    year: "2024"
-#    authors: "Kevin Stowe, Benny Longwill, Alyssa Francis, Tatsuya Aoyama, Debanjan Ghosh, Swapna Somasundaran"
-#    venue: "Building Educational Applications (BEA)."
-#    paper_pdf: 
-#    code: 
-#    nlp: y
-#
+  - title: "Avoiding Taylor Swift: Identifying Fairness Issues in Automatically Generated Testing Content."
+    year: "2024"
+    authors: "Kevin Stowe, Benny Longwill, Alyssa Francis, Tatsuya Aoyama, Debanjan Ghosh, Swapna Somasundaran"
+    venue: "Building Educational Applications (BEA)."
+    paper_pdf: 
+    code: 
+    nlp: y
+
   - title: "eRST: A Signaled Graph Theory of Discourse Relations and Organization."
     year: "2024"
     authors: "Amir Zeldes, Tatsuya Aoyama, Janet Yang Liu, Siyao Peng, Debopam Das, and Luke Gessler"
