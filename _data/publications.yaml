@@ -1,9 +1,9 @@
 papers:
-  - title: "Avoiding Taylor Swift: Identifying Fairness Issues in Automatically Generated Testing Content."
+  - title: "Identifying Fairness Issues in Automatically Generated Testing Content."
     year: "2024"
     authors: "Kevin Stowe, Benny Longwill, Alyssa Francis, Tatsuya Aoyama, Debanjan Ghosh, Swapna Somasundaran"
     venue: "The 19th Workshop on Innovative Use of NLP for Building Educational Applications (BEA), the North American Chapter of the Association for Computational Linguistics (NAACL) 2024."
-    paper_pdf: 
+    paper_pdf: https://arxiv.org/abs/2404.15104
     code: 
     nlp: y
 
