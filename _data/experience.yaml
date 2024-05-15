@@ -1,8 +1,8 @@
 experiences:
-- place: "JPMorgan Chase & Co., Machine Learning Center of Excellence"
+- place: "JPMorgan Chase & Co."
   time: "Summer 2024"
   title: "Summer Associate, Data Science & AI Program"
-  subtitle: ""
+  subtitle: "Machine Learning Center of Excellence (MLCOE)"
   category: "work"
 
 - place: "ETS, AI Lab"
@@ -11,7 +11,7 @@ experiences:
   subtitle: ""
   category: "work"
 
-- place: "Posh Technologies, Inc."
+- place: "Posh Technologies"
   time: "Summer 2022"
   title: "NLP Research Intern"
   subtitle: ""
