@@ -4,7 +4,7 @@ papers:
     authors: "Kevin Stowe, Benny Longwill, Alyssa Francis, Tatsuya Aoyama, Debanjan Ghosh, Swapna Somasundaran"
     venue: "The 19th Workshop on Innovative Use of NLP for Building Educational Applications (BEA), the North American Chapter of the Association for Computational Linguistics (NAACL) 2024."
     paper_pdf: https://arxiv.org/abs/2404.15104
-    code: 
+    code: https://github.com/EducationalTestingService/fairness-detection
     nlp: y
 
   - title: "eRST: A Signaled Graph Theory of Discourse Relations and Organization."
@@ -18,7 +18,7 @@ papers:
     year: "2024"
     authors: "Tatsuya Aoyama, Chihiro Taguchi, and Nathan Schneider"
     venue: "The 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)"
-    paper_pdf: 
+    paper_pdf: https://aclanthology.org/2024.lrec-main.839/
     code: https://github.com/t-aoyam/japanese-snacs
     nlp: y
 
@@ -26,7 +26,8 @@ papers:
     year: "2024"
     authors: "Chloé Braud, Amir Zeldes, Laura Rivière, Yang Janet Liu, Philippe Muller, Damien Sileo, and Tatsuya Aoyama"
     venue: "The 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)"
-    paper_pdf: 
+    paper_pdf: https://aclanthology.org/2024.lrec-main.447/
+    code: https://github.com/disrpt/latest
     nlp: y
 
   - title: "What’s Hard in RST Parsing? Predictive Models for Error Analysis."
