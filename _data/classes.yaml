@@ -1,6 +1,6 @@
 classes:
     - name: "LING/COSC-572"
-      time: "<a href='assets/ta-evals/COSC_572_TA_Spring_2023.html' target='_blank'>Spring 2023</a>, <a href='assets/ta-evals/COSC_572_TA_Spring_2024.html' target='_blank'>Spring 2024</a>"
+      time: "<a href='assets/ta-evals/COSC_572_TA_Spring_2023.html' target='_blank'>Spring 2023</a>, <a href='assets/ta-evals/COSC_572_TA_Spring_2024.mhtml' target='_blank'>Spring 2024</a>"
       title: "Empirical Methods in Natural Language Processing"
       category: "current"
       link: "https://people.cs.georgetown.edu/cosc572/s23/index.html"
