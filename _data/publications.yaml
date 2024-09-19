@@ -9,7 +9,7 @@ papers:
     sla: y
     selected: y
 
-  - title: "Identifying Fairness Issues in Automatically Generated Testing Content."
+  - title: "GDTB: Genre Diverse Data for English Shallow Discourse Parsing across Modalities, Text Types, and Domains."
     year: "2024"
     authors: "Yang Janet Liu*, Tatsuya Aoyama*, Wesley Scivetti*, Yilun Zhu*, Shabnam Behzad, Lauren Levine, Jessica Lin, Devika Tiwari and Amir Zeldes."
     venue: "In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP 2024, main long)."
