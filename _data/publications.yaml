@@ -17,19 +17,19 @@ papers:
     code:
     nlp: y
 
+  - title: "eRST: A Signaled Graph Theory of Discourse Relations and Organization."
+    year: "2024"
+    authors: "Amir Zeldes, Tatsuya Aoyama, Janet Yang Liu, Siyao Peng, Debopam Das, and Luke Gessler"
+    venue: "Computational Linguistics, 1-47."
+    paper_pdf: https://direct.mit.edu/coli/article/doi/10.1162/coli_a_00538/124464
+    nlp: y
+
   - title: "Identifying Fairness Issues in Automatically Generated Testing Content."
     year: "2024"
     authors: "Kevin Stowe, Benny Longwill, Alyssa Francis, Tatsuya Aoyama, Debanjan Ghosh, Swapna Somasundaran"
     venue: "The 19th Workshop on Innovative Use of NLP for Building Educational Applications (BEA), the North American Chapter of the Association for Computational Linguistics (NAACL) 2024."
     paper_pdf: https://arxiv.org/abs/2404.15104
     code: https://github.com/EducationalTestingService/fairness-detection
-    nlp: y
-
-  - title: "eRST: A Signaled Graph Theory of Discourse Relations and Organization."
-    year: "2024"
-    authors: "Amir Zeldes, Tatsuya Aoyama, Janet Yang Liu, Siyao Peng, Debopam Das, and Luke Gessler"
-    venue: "arxiv preprint"
-    paper_pdf: https://arxiv.org/abs/2403.13560
     nlp: y
 
   - title: "J-SNACS: Adposition and Case Supersenses for Japanese Joshi."
