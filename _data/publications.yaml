@@ -3,7 +3,7 @@ papers:
     year: "2024"
     authors: "Tatsuya Aoyama and Nathan Schneider"
     venue: "In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP 2024, main long)."
-    paper_pdf:
+    paper_pdf: https://aclanthology.org/2024.emnlp-main.283/
     code:
     nlp: y
     sla: y
@@ -13,7 +13,7 @@ papers:
     year: "2024"
     authors: "Yang Janet Liu*, Tatsuya Aoyama*, Wesley Scivetti*, Yilun Zhu*, Shabnam Behzad, Lauren Levine, Jessica Lin, Devika Tiwari and Amir Zeldes."
     venue: "In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP 2024, main long)."
-    paper_pdf:
+    paper_pdf: https://aclanthology.org/2024.emnlp-main.684/
     code:
     nlp: y
 
