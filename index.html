@@ -46,34 +46,48 @@ title: Home
   </ul>
 
   <div class="tab-content">
-    <div class="tab-pane active" id="papers-sel">
-      {% assign papers = site.data.publications.papers | where: "selected", "y" %}
-      {% for paper in papers %}
-        <div class="paper">
-          <p class="title"><b>{{ paper.title }}</b>
-            {% if paper.paper_pdf %}
-              <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">PDF</a>
-            {% endif %}
-            {% if paper.slides %}
-              <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-            {% endif %}
-            {% if paper.poster %}
-              <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-            {% endif %}
-            {% if paper.video %}
-              <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-            {% endif %}
-            {% if paper.code %}
-              <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-            {% endif %}
-          </p>
-          <p>{{ paper.authors }}</p>
-          <p><i>{{ paper.venue }}</i></p>
-           <div class="paper-buttons">
 
-          </div>
-        </div>
+    <!-- SELECTED PAPERS -->
+
+    <div class="tab-pane" id="papers-sel">
+      {% assign selected_papers = site.data.publications.papers | where: "selected", "y" %}
+	  {% assign years = "2020" %}
+      {% for paper in selected_papers %}
+	  {% assign year = paper.year | prepend: "," %}
+	  {% assign years = years | append: year %}
       {% endfor %}
+      {% assign  year_list = years | split: "," | uniq | sort | reverse %}
+	  {% for year in year_list %}
+		<h5>{{ year }}</h5>
+		  {% for paper in selected_papers %}
+			{% if paper.year == year %}
+				<div class="paper">
+				  <p class="title"><b>{{ paper.title }}</b>
+					{% if paper.paper_pdf %}
+					  <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">PDF</a>
+					{% endif %}
+					{% if paper.slides %}
+					  <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+					{% endif %}
+					{% if paper.poster %}
+					  <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
+					{% endif %}
+					{% if paper.video %}
+					  <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
+					{% endif %}
+					{% if paper.code %}
+					  <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
+					{% endif %}
+				  </p>
+				  <p>{{ paper.authors | replace: "Tatsuya Aoyama", "<b>Tatsuya Aoyama</b>" }}</p>
+				  <p><i>{{ paper.venue }}</i></p>
+				   <div class="paper-buttons">
+
+				  </div>
+				</div>
+			{% endif %}
+		  {% endfor %}
+	{% endfor %}
     </div>
 
     <!-- All PAPERS -->
