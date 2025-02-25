@@ -1,4 +1,22 @@
 papers:
+  - title: "Language Models Grow Less Humanlike beyond Phase Transition."
+    year: "2025"
+    authors: "Tatsuya Aoyama and Ethan Wilcox"
+    venue: ""
+    paper_pdf: 
+    code: 
+    nlp: y
+    selected: y
+
+  - title: "Anything Goes? A Crosslinguistic Study of (Im)possible Language Learning in LMs."
+    year: "2025"
+    authors: "Xiulin Yang, Tatsuya Aoyama, Yuekun Kao and Ethan Wilcox"
+    venue: ""
+    paper_pdf: 
+    code: 
+    nlp: y
+    selected: y
+
   - title: "Modeling Nonnative Sentence Processing with L2 Language Models."
     year: "2024"
     authors: "Tatsuya Aoyama and Nathan Schneider"
@@ -21,14 +39,14 @@ papers:
     year: "2024"
     authors: "Amir Zeldes, Tatsuya Aoyama, Janet Yang Liu, Siyao Peng, Debopam Das, and Luke Gessler"
     venue: "Computational Linguistics, 1-47."
-    paper_pdf: https://direct.mit.edu/coli/article/doi/10.1162/coli_a_00538/124464
+    paper_pdf: https://direct.mit.edu/coli/article/doi/10.1162/coli_a_00538/124464/eRST-A-Signaled-Graph-Theory-of-Discourse
     nlp: y
 
   - title: "Identifying Fairness Issues in Automatically Generated Testing Content."
     year: "2024"
     authors: "Kevin Stowe, Benny Longwill, Alyssa Francis, Tatsuya Aoyama, Debanjan Ghosh, Swapna Somasundaran"
     venue: "The 19th Workshop on Innovative Use of NLP for Building Educational Applications (BEA), the North American Chapter of the Association for Computational Linguistics (NAACL) 2024."
-    paper_pdf: https://arxiv.org/abs/2404.15104
+    paper_pdf: https://aclanthology.org/2024.bea-1.20/
     code: https://github.com/EducationalTestingService/fairness-detection
     nlp: y
 
