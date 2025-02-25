@@ -2,7 +2,7 @@ papers:
   - title: "Language Models Grow Less Humanlike beyond Phase Transition."
     year: "2025"
     authors: "Tatsuya Aoyama and Ethan Wilcox"
-    venue: ""
+    venue: "arXiv preprint"
     paper_pdf: 
     code: 
     nlp: y
@@ -11,7 +11,7 @@ papers:
   - title: "Anything Goes? A Crosslinguistic Study of (Im)possible Language Learning in LMs."
     year: "2025"
     authors: "Xiulin Yang, Tatsuya Aoyama, Yuekun Kao and Ethan Wilcox"
-    venue: ""
+    venue: "arXiv preprint"
     paper_pdf: 
     code: 
     nlp: y
