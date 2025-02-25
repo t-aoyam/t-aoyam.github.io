@@ -52,7 +52,7 @@ title: Home
 
     <div class="tab-pane" id="papers-sel">
       {% assign selected_papers = site.data.publications.papers | where: "selected", "y" %}
-	  {% assign years = "2021" %}
+	  {% assign years = "2022" %}
       {% for paper in selected_papers %}
 	  {% assign year = paper.year | prepend: "," %}
 	  {% assign years = years | append: year %}
