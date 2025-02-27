@@ -3,17 +3,17 @@ papers:
     year: "2025"
     authors: "Tatsuya Aoyama and Ethan Wilcox"
     venue: "arXiv preprint"
-    paper_pdf: 
+    paper_pdf: https://arxiv.org/abs/2502.18802
     code: 
     nlp: y
     selected: y
 
   - title: "Anything Goes? A Crosslinguistic Study of (Im)possible Language Learning in LMs."
     year: "2025"
-    authors: "Xiulin Yang, Tatsuya Aoyama, Yuekun Kao and Ethan Wilcox"
+    authors: "Xiulin Yang, Tatsuya Aoyama, Yuekun Yao and Ethan Wilcox"
     venue: "arXiv preprint"
-    paper_pdf: 
-    code: 
+    paper_pdf: https://arxiv.org/abs/2502.18795
+    code: https://github.com/xiulinyang/multilingual-LM
     nlp: y
     selected: y
 
