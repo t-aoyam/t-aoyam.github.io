@@ -64,10 +64,10 @@ title: Home
 			{% if paper.year == year %}
 				<div class="paper">
 					<div class="paper-header" style="display: flex; align-items: center;">
+					  {% if paper.venue_icon %}
+						<span class="venue-icon">{{ paper.venue_icon }}</span>
+					  {% endif %}
 					  <p class="title"><b>{{ paper.title }}</b>
-						{% if paper.venue_icon %}
-						  <span class="venue-icon">{{ paper.venue_icon }}</span>
-						{% endif %}
 						{% if paper.paper_pdf %}
 						  <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">PDF</a>
 						{% endif %}
