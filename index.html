@@ -67,26 +67,28 @@ title: Home
 					  {% if paper.venue_icon %}
 						<span class="venue-icon">{{ paper.venue_icon }}</span>
 					  {% endif %}
-					  <p class="title"><b>{{ paper.title }}</b>
-						{% if paper.paper_pdf %}
-						  <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">PDF</a>
-						{% endif %}
-						{% if paper.slides %}
-						  <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-						{% endif %}
-						{% if paper.poster %}
-						  <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-						{% endif %}
-						{% if paper.video %}
-						  <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-						{% endif %}
-						{% if paper.code %}
-						  <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-						{% endif %}
-					  </p>
-					  <p>{{ paper.authors | replace: "Tatsuya Aoyama", "<b>Tatsuya Aoyama</b>" }}</p>
-					  <p><i>{{ paper.venue }}</i></p>
-					  <div class="paper-buttons"></div>
+					  <div class="paper-info" style="display: flex; flex-direction: column;">
+						  <p class="title"><b>{{ paper.title }}</b>
+							{% if paper.paper_pdf %}
+							  <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">PDF</a>
+							{% endif %}
+							{% if paper.slides %}
+							  <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+							{% endif %}
+							{% if paper.poster %}
+							  <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
+							{% endif %}
+							{% if paper.video %}
+							  <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
+							{% endif %}
+							{% if paper.code %}
+							  <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
+							{% endif %}
+						  </p>
+						  <p>{{ paper.authors | replace: "Tatsuya Aoyama", "<b>Tatsuya Aoyama</b>" }}</p>
+						  <p><i>{{ paper.venue }}</i></p>
+						  <div class="paper-buttons"></div>
+					  </div>
 					</div>
 				</div>
 			{% endif %}
