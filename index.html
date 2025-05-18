@@ -92,7 +92,6 @@ title: Home
 						  <div class="paper-buttons"></div>
 					  </div>
 					</div>
-				</div>
 			{% endif %}
 		  {% endfor %}
 	{% endfor %}
@@ -114,12 +113,12 @@ title: Home
 			{% if paper.year == year %}
 				<div class="paper">
 					<div class="paper-header" style="display: flex; align-items: center;">
-					  <div class="venue-icon-wrapper">
-						{% if paper.venue_icon %}
-						<span class="venue-icon">{{ paper.venue_icon }}</span>
-					  </div>
-					</div>
+					  {% if paper.venue_icon %}
+						<div class="venue-icon-wrapper">
+							<span class="venue-icon">{{ paper.venue_icon }}</span>
+						</div>
 					  {% endif %}
+					</div>
 					  <div class="paper-info" style="display: flex; flex-direction: column;">
 						  <p class="title"><b>{{ paper.title }}</b>
 							{% if paper.paper_pdf %}
@@ -143,7 +142,6 @@ title: Home
 						  <div class="paper-buttons"></div>
 					  </div>
 					</div>
-				</div>
 			{% endif %}
 		  {% endfor %}
 	{% endfor %}
