@@ -24,7 +24,6 @@ title: Home
     </dl>
 
   </p-->
-  <span class="venue-icon">TEST</span>
   <p>
     Prior to joining Georgetown, I obtained a B.A. in Liberal Arts from Soka University of America, where my main focus was Psychology and Economics (although I wrote my thesis on a topic related to Second Language Acquisition!). Subsequently, I pursued an M.A. in Teaching English to Speakers of Other Languages (TESOL) at Michigan State University, where I was co-advised by <a href=https://sites.google.com/site/sandracdeshors/home target="_blank">Sandra Deshors</a> and <a href=https://www.egr.msu.edu/people/profile/kristenj target="_blank">Kristen Johnson</a>. My M.A. thesis focused on quantifying how Chinese and Japanese speakers' use of the English articles deviates from that of native speakers, leveraging a modeling technique called <a href=https://www.euppublishing.com/doi/abs/10.3366/cor.2014.0053>Multifactorial Prediction and Deviation Analysis with Regressions (MuPDAR)</a>. 
   </p>
@@ -64,31 +63,31 @@ title: Home
 		  {% for paper in selected_papers %}
 			{% if paper.year == year %}
 				<div class="paper">
-				  <p class="title"><b>{{ paper.title }}</b>
-					{% if paper.venue_icon %}
-					  <span class="venue-icon">{{ paper.venue_icon }}</span>
-					{% endif %}
-					{% if paper.paper_pdf %}
-					  <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">PDF</a>
-					{% endif %}
-					{% if paper.slides %}
-					  <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-					{% endif %}
-					{% if paper.poster %}
-					  <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-					{% endif %}
-					{% if paper.video %}
-					  <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-					{% endif %}
-					{% if paper.code %}
-					  <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-					{% endif %}
-				  </p>
-				  <p>{{ paper.authors | replace: "Tatsuya Aoyama", "<b>Tatsuya Aoyama</b>" }}</p>
-				  <p><i>{{ paper.venue }}</i></p>
-				   <div class="paper-buttons">
-
-				  </div>
+					<div class="paper-header" style="display: flex; align-items: center;">
+					  <p class="title"><b>{{ paper.title }}</b>
+						{% if paper.venue_icon %}
+						  <span class="venue-icon">{{ paper.venue_icon }}</span>
+						{% endif %}
+						{% if paper.paper_pdf %}
+						  <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">PDF</a>
+						{% endif %}
+						{% if paper.slides %}
+						  <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+						{% endif %}
+						{% if paper.poster %}
+						  <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
+						{% endif %}
+						{% if paper.video %}
+						  <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
+						{% endif %}
+						{% if paper.code %}
+						  <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
+						{% endif %}
+					  </p>
+					  <p>{{ paper.authors | replace: "Tatsuya Aoyama", "<b>Tatsuya Aoyama</b>" }}</p>
+					  <p><i>{{ paper.venue }}</i></p>
+					  <div class="paper-buttons">
+					</div>
 				</div>
 			{% endif %}
 		  {% endfor %}
