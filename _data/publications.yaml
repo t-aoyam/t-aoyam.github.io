@@ -132,6 +132,7 @@ papers:
     venue: "Journal of International Students 10(3)"
     paper_pdf: https://www.ojed.org/index.php/jis/article/view/730
     sla: y
+    venue_icon: "JIS"
     
   - title: "A Corpus-based Multifactorial Analysis of Japanese and Chinese Speakers’ English Article Use : Quantifying the Deviation Using MuPDAR"
     year: "2020"
@@ -140,3 +141,4 @@ papers:
     paper_pdf: https://d.lib.msu.edu/etd/48570
     nlp: y
     sla: y
+    venue_icon: "MA<br>thesis"
