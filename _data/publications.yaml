@@ -63,7 +63,7 @@ papers:
     paper_pdf: https://aclanthology.org/2024.lrec-main.839/
     code: https://github.com/t-aoyam/japanese-snacs
     nlp: y
-    venue_icon: "LREC-COLING"
+    venue_icon: "LREC<br>COLING"
 
   - title: "DISRPT: A Multilingual, Multi-domain, Cross-framework Benchmark for Discourse Processing."
     year: "2024"
@@ -72,7 +72,7 @@ papers:
     paper_pdf: https://aclanthology.org/2024.lrec-main.447/
     code: https://github.com/disrpt/latest
     nlp: y
-    venue_icon: "LREC-COLING"
+    venue_icon: "LREC<br>COLING"
 
   - title: "What’s Hard in RST Parsing? Predictive Models for Error Analysis."
     year: "2023"
@@ -107,7 +107,7 @@ papers:
     paper_pdf: https://aclanthology.org/2022.nlp4call-1.1/
     nlp: y
     sla: y
-    venue_icon: "NLP4CALL"
+    venue_icon: "NLP4<br>CALL"
 
   - title: "Probe-Less Probing of BERT’s Layer-Wise Linguistic Knowledge with Masked Word Prediction."
     year: "2022"
@@ -116,7 +116,7 @@ papers:
     paper_pdf: https://aclanthology.org/2022.naacl-srw.25/
     nlp: y
     selected: y
-    venue_icon: "NAACL-SRW"
+    venue_icon: "NAACL<br>SRW"
 
   - title: "Revisiting Layer-Wise Linguistic Knowledge with Masked Word Prediction."
     year: "2022"
@@ -124,7 +124,7 @@ papers:
     venue: "Mid-Atlantic Student Colloquium on Speech, Language and Learning (MASC-SLL 2022)"
     paper_pdf:
     nlp: y
-    venue_icon: "MASC-SLL"
+    venue_icon: "MASC<br>SLL"
     
   - title: " International Students’ Willingness to Communicate in English as a Second Language : Effects of L2 Self-Confidence, Acculturation, and Motivational Types"
     year: "2020"
