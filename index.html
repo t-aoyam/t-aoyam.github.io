@@ -50,7 +50,7 @@ title: Home
 
     <!-- SELECTED PAPERS -->
 
-    <div class="tab-pane" id="papers-sel">
+    <div class="tab-pane active" id="papers-sel">
       {% assign selected_papers = site.data.publications.papers | where: "selected", "y" %}
 	  {% assign years = "2022" %}
       {% for paper in selected_papers %}
@@ -100,7 +100,7 @@ title: Home
 
     <!-- All PAPERS -->
 
-    <div class="tab-pane active" id="papers-all">
+    <div class="tab-pane" id="papers-all">
 	  {% assign papers = site.data.publications.papers %}
 	  {% assign years = "2020" %}
       {% for paper in papers %}
