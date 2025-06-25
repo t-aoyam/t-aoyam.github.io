@@ -14,7 +14,7 @@ papers:
     authors: "Tatsuya Aoyama and Ethan Wilcox"
     venue: "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025, main long)."
     paper_pdf: https://arxiv.org/abs/2502.18802
-    code: 
+    code: https://github.com/t-aoyam/pt-and-ppp
     nlp: y
     selected: y
     venue_icon: "ACL"
