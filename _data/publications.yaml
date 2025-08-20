@@ -7,7 +7,7 @@ papers:
     code: 
     nlp: y
     selected: n
-    venue_icon: "arXiv"
+    venue_icon: "EMNLP"
 
   - title: "Language Models Grow Less Humanlike beyond Phase Transition."
     year: "2025"
