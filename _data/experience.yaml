@@ -1,4 +1,10 @@
 experiences:
+- place: "Meta Platforms, Inc."
+  time: "2025-"
+  title: "Research Scientist"
+  subtitle: "GenAI"
+  category: "work"
+
 - place: "JPMorgan Chase & Co."
   time: "Summer 2024"
   title: "Summer Associate, Data Science & AI Associate Program"
@@ -24,7 +30,7 @@ experiences:
   category: "work"
 
 - place: "Georgetown University"
-  time: "2020 - now (exp. 2025)"
+  time: "2020 - 2025"
   title: "Ph.D. in Computational Linguistics"
   subtitle: "Advised by Nathan Schneider and Amir Zeldes"
   category: "school"
