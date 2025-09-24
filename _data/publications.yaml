@@ -7,7 +7,7 @@ papers:
     code: 
     nlp: y
     selected: y
-    venue_icon: "CogInterp"
+    venue_icon: "Cog<br>Interp"
 
   - title: "Unpacking Let Alone: Human-Scale Models Generalize to a Rare Construction in Form but not Meaning."
     year: "2025"
