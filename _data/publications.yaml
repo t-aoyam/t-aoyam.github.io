@@ -1,4 +1,14 @@
 papers:
+  - title: "Predicting the Formation of Induction Heads."
+    year: "2025"
+    authors: "Tatsuya Aoyama, Ethan Wilcox and Nathan Schneider"
+    venue: "First Workshop on CogInterp: Interpreting Cognition in Deep Learning Models (CogInterp @ NeurIPS)."
+    paper_pdf:
+    code: 
+    nlp: y
+    selected: y
+    venue_icon: "CogInterp"
+
   - title: "Unpacking Let Alone: Human-Scale Models Generalize to a Rare Construction in Form but not Meaning."
     year: "2025"
     authors: "Wesley Scivetti, Tatsuya Aoyama, Ethan Wilcox and Nathan Schneider"
