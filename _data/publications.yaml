@@ -3,7 +3,7 @@ papers:
     year: "2025"
     authors: "Tatsuya Aoyama, Ethan Wilcox and Nathan Schneider"
     venue: "First Workshop on CogInterp: Interpreting Cognition in Deep Learning Models (CogInterp @ NeurIPS)."
-    paper_pdf:
+    paper_pdf: https://openreview.net/forum?id=tkgxDkAVBv
     code: 
     nlp: y
     selected: y
