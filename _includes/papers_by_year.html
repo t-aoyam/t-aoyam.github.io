@@ -1,14 +1,12 @@
 {%- comment -%}
-Renders a list of papers grouped by year.
-Input: papers (array of paper objects)
+Input: include.papers (array)
 {%- endcomment -%}
-
-{%- assign groups = papers | group_by: "year" -%}
-{%- assign groups = groups | sort: "name" | reverse -%}
-
+{%- assign groups = include.papers | group_by: "year" | sort: "name" | reverse -%}
 {%- for g in groups -%}
-  <h5>{{ g.name }}</h5>
-  {%- for paper in g.items -%}
-    {%- include paper_card.html paper=paper -%}
-  {%- endfor -%}
+  {%- if g.name -%}
+    <h5>{{ g.name }}</h5>
+    {%- for paper in g.items -%}
+      {%- include paper_card.html paper=paper -%}
+    {%- endfor -%}
+  {%- endif -%}
 {%- endfor -%}
