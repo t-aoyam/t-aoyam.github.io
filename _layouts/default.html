@@ -2,25 +2,22 @@
 <html lang="en">
 <head>
 <style>
-img {
-  border-radius: 50%;
-}
+img { border-radius: 50%; }
 
-/* Container for icon + text */
-.paper-header {
+/* Container for icon + text (matches include: class="paper-main") */
+.paper-main {
   display: flex;
   align-items: flex-start; /* top-align icon with title */
-  gap: 1em;               /* spacing between icon and text */
+  gap: 1em;
 }
 
-/* Text block */
-.paper-info {
+/* Text block (matches include: class="paper-meta") */
+.paper-meta {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-/* The badge itself */
 .venue-icon {
   display: inline-block;
   background-color: #eaeaea;
@@ -33,14 +30,15 @@ img {
   white-space: nowrap;
 }
 
-/* Wrapper to reserve horizontal space for the badge */
+/* Left column reserved for the badge */
 .venue-icon-wrapper {
-  width: 70px;            /* keeps columns aligned even if icons vary */
+  width: 70px;                /* keep columns aligned */
   display: flex;
-  align-items: flex-start; /* align with first line of text */
-  justify-content: flex-start;
+  align-items: flex-start;     /* align with first line of title */
+  justify-content: flex-start; /* left-align */
 }
 </style>
+
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
