@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>
-  img {
-    border-radius: 50%;
-  }
-  .paper-header {
-    display: flex;
-    align-items: flex-start; /* aligns top edges of icon and text */
-	flex: 0;
-  }
-  .paper-info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-  .venue-icon {
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-    background-color: #eaeaea;
-    color: #333;
-    font-size: 0.9em;
-    padding: 0.2em 0.3em;
-    margin-right: 1em;
-    border-radius: 4px;
-    font-weight: bold;
-    text-align: center;
-    white-space: nowrap;
-  }
-  .venue-icon-wrapper {
-    width: 70px; /* reserve space for short icons */
-    display: flex;
-    align-items: center;  /* vertically center the icon in the space */
-    justify-content: center;
-  }
-  </style>
+<style>
+img {
+  border-radius: 50%;
+}
+
+/* Container for icon + text */
+.paper-header {
+  display: flex;
+  align-items: flex-start; /* top-align icon with title */
+  gap: 1em;               /* spacing between icon and text */
+}
+
+/* Text block */
+.paper-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* The badge itself */
+.venue-icon {
+  display: inline-block;
+  background-color: #eaeaea;
+  color: #333;
+  font-size: 0.9em;
+  padding: 0.2em 0.3em;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Wrapper to reserve horizontal space for the badge */
+.venue-icon-wrapper {
+  width: 70px;            /* keeps columns aligned even if icons vary */
+  display: flex;
+  align-items: flex-start; /* align with first line of text */
+  justify-content: flex-start;
+}
+</style>
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
