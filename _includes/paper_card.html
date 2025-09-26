@@ -1,0 +1,38 @@
+{%- comment -%}
+Renders a single paper.
+Inputs: paper (object with title, authors, venue, venue_icon, year, links)
+{%- endcomment -%}
+
+<div class="paper">
+  <div class="paper-main">
+    {%- if paper.venue_icon -%}
+    <div class="venue-icon-wrapper">
+      <span class="venue-icon">{{ paper.venue_icon }}</span>
+    </div>
+    {%- endif -%}
+
+    <div class="paper-meta">
+      <p class="title"><b>{{ paper.title }}</b></p>
+      <p class="authors">
+        {{ paper.authors | replace: "Tatsuya Aoyama", "<b>Tatsuya Aoyama</b>" }}
+      </p>
+      <p class="venue"><i>{{ paper.venue }}</i></p>
+    </div>
+  </div>
+
+  {%- assign link_specs = "paper_pdf|PDF,slides|Slides,poster|Poster,video|Video,code|Code" | split: "," -%}
+  <div class="paper-links">
+    {%- for spec in link_specs -%}
+      {%- assign parts = spec | split: "|" -%}
+      {%- assign key   = parts[0] -%}
+      {%- assign label = parts[1] -%}
+      {%- if paper[key] -%}
+        {%- if key == "video" or key == "code" -%}
+          <a class="button" href="{{ paper[key] }}" target="_blank">{{ label }}</a>
+        {%- else -%}
+          <a class="button" href="{{ paper[key] | relative_url }}" target="_blank">{{ label }}</a>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
