@@ -1,4 +1,14 @@
 papers:
+  - title: "Global PIQA: Evaluating Physical Commonsense Reasoning Across 100+ Languages and Cultures"
+    year: "2025"
+    authors: "Tyler A Chang, Catherine Arnett, ..., Tatsuya Aoyama, ..."
+    venue: "arXiv."
+    paper_pdf: https://arxiv.org/abs/2510.24081
+    code: 
+    nlp: y
+    selected: n
+    venue_icon: "arXiv"
+
   - title: "Predicting the Formation of Induction Heads."
     year: "2025"
     authors: "Tatsuya Aoyama, Ethan Wilcox and Nathan Schneider"
