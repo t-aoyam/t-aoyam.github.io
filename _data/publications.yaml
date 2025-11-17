@@ -4,7 +4,7 @@ papers:
     authors: "Tyler A Chang, Catherine Arnett, ..., Tatsuya Aoyama, ..."
     venue: "arXiv."
     paper_pdf: https://arxiv.org/abs/2510.24081
-    code: 
+    code: https://github.com/mrlbenchmarks/global-piqa
     nlp: y
     selected: n
     venue_icon: "arXiv"
@@ -17,7 +17,7 @@ papers:
     code: 
     nlp: y
     selected: y
-    venue_icon: "Cog<br>Interp"
+    venue_icon: "Cog<br>Interp<br>@NeurIPS"
 
   - title: "Unpacking Let Alone: Human-Scale Models Generalize to a Rare Construction in Form but not Meaning."
     year: "2025"
@@ -84,7 +84,7 @@ papers:
     paper_pdf: https://aclanthology.org/2024.bea-1.20/
     code: https://github.com/EducationalTestingService/fairness-detection
     nlp: y
-    venue_icon: "BEA"
+    venue_icon: "BEA<br>NAACL"
 
   - title: "J-SNACS: Adposition and Case Supersenses for Japanese Joshi."
     year: "2024"
@@ -120,7 +120,7 @@ papers:
     paper_pdf: https://aclanthology.org/2023.law-1.17/
     code: https://github.com/gucorpling/gentle
     nlp: y
-    venue_icon: "LAW"
+    venue_icon: "LAW<br>@ACL"
 
   - title: "Corpus-Based Investigation of the Markedness and Frequency of Japanese Passives in Contemporary Written Japanese."
     year: "2023"
