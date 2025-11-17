@@ -84,7 +84,7 @@ papers:
     paper_pdf: https://aclanthology.org/2024.bea-1.20/
     code: https://github.com/EducationalTestingService/fairness-detection
     nlp: y
-    venue_icon: "BEA<br>NAACL"
+    venue_icon: "BEA<br>@NAACL"
 
   - title: "J-SNACS: Adposition and Case Supersenses for Japanese Joshi."
     year: "2024"
@@ -111,7 +111,7 @@ papers:
     paper_pdf: https://aclanthology.org/2023.sigdial-1.3/
     code: https://github.com/janetlauyeung/NLPErrors4RST
     nlp: y
-    venue_icon: "SIGDIAL"
+    venue_icon: "SIGDIAL<br>@INLG"
 
   - title: "GENTLE: A Genre-Diverse Multilayer Challenge Set for English NLP and Linguistic Evaluation."
     year: "2023"
