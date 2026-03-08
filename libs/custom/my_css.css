@@ -34,7 +34,7 @@ h4 {
      right = fixed button area */
   display: grid;
   /* grid-template-columns: 1fr 100px; */
-  grid-template-columns: 70px minmax(0, 1fr) 125px;
+  grid-template-columns: 70px minmax(0, 1fr) 100px;
   column-gap: 16px;
   align-items: start;
   width: 100%;
