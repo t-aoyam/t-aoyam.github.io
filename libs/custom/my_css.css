@@ -48,7 +48,7 @@ h4 {
 
 /* Title slightly larger */
 .paper .title {
-  font-size: 1.25em;
+  font-size: 1.25rem;
   line-height: 1.2;
   margin-bottom: 8px;   /* keeps spacing to authors */
 }
