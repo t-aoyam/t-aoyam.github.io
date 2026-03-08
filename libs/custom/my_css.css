@@ -27,38 +27,40 @@ h4 {
 
 .paper {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center;      /* vertical centering */
   gap: 16px;
   width: 100%;
-}
-
-.paper-main {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex: 1 1 auto;
-  min-width: 0;
+  margin-bottom: 22px;      /* vertical spacing between entries */
 }
 
 .venue-icon-wrapper {
   flex: 0 0 70px;
+  display: flex;
+  justify-content: center;
 }
 
 .paper-meta {
-  flex: 1 1 auto;
+  flex: 1;
   min-width: 0;
 }
 
 .paper-links {
   flex: 0 0 120px;
   width: 120px;
-  margin-left: auto;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 28px);
   gap: 6px;
+}
+
+.paper .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .paper .title {
@@ -72,25 +74,6 @@ h4 {
 .paper-buttons {
   margin-top: 2px;
   justify-self: end;
-}
-
-/* all buttons same size */
-.paper .button {
-  width: 100%;
-  height: 20px;
-  line-height: 20px;
-  padding: 0 8px;
-  margin: 0;
-
-  font-weight: 400;
-  text-transform: none;
-  text-align: center;
-  white-space: nowrap;
-
-  box-sizing: border-box;
-  border-radius: 4px;
-  border: 1px solid #1f3b73;
-  text-decoration: none;
 }
 
 /* used buttons */
