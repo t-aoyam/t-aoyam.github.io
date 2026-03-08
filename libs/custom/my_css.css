@@ -1,93 +1,168 @@
 h4 {
-  letter-spacing: .1rem; }
+  letter-spacing: .1rem;
+}
+
 .container {
-  max-width: 900px; }
+  max-width: 900px;
+}
+
 .header {
   margin-top: 60px;
-  margin-bottom: 60px; 
-  text-align: left; }
+  margin-bottom: 60px;
+  text-align: left;
+}
+
 .main-description h1 {
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+}
+
 .main-description p {
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+}
+
 .main-description .fa {
   font-size: 22px;
-  margin-top: 5px; }
+  margin-top: 5px;
+}
+
 .paper {
-    margin-bottom: 20px;
-    line-height: 1.2;}
+  margin-bottom: 20px;
+  line-height: 1.2;
+
+  /* make each publication entry two columns:
+     left = text
+     right = fixed button area */
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  column-gap: 16px;
+  align-items: start;
+}
+
 .paper .title {
-  /*text-transform: uppercase; */}
+  /* text-transform: uppercase; */
+}
+
 .paper p {
-  margin-bottom: 2px }
+  margin-bottom: 2px;
+}
+
 .paper-buttons {
-    margin-top: 2px }
-  /* arrange paper links in a fixed-width two-column grid
-     - width chosen so each button can accommodate the longest label
-       ("Video") and padding
-     - grid ensures two equal columns regardless of how many buttons
-       are present, keeping the right-hand column identical across entries */
-  .paper-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
-    /* 20ch covers two buttons of ~8ch each plus gap; tweak as desired */
-    width: 20ch;
-    flex-shrink: 0; /* keep right column consistent size */
-  }
-  .paper .button {
-    /* fill grid cell and remain same size for all buttons */
-    width: 100%;
-    height: 20px;
-    padding: 0 5px;
-    font-weight: 100;
-    line-height: 20px;
-    margin-bottom: 0px;
-    text-transform: none;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  margin-top: 2px;
+}
+
+/* fixed 2x2 button block */
+.paper-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 28px);
+  gap: 6px;
+
+  /* fixed width so the right column is identical for every paper */
+  width: 150px;
+  flex-shrink: 0;
+}
+
+/* all buttons same size */
+.paper .button {
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 8px;
+  margin: 0;
+
+  font-weight: 400;
+  text-transform: none;
+  text-align: center;
+  white-space: nowrap;
+
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #1f3b73;
+  text-decoration: none;
+}
+
+/* used buttons */
+.paper .button.active,
+.paper .button.has-link {
+  background-color: #1f3b73; /* navy */
+  color: #fff;
+  border-color: #1f3b73;
+}
+
+/* unused buttons */
+.paper .button.disabled,
+.paper .button.is-empty {
+  background-color: #e5e5e5;
+  color: #888;
+  border-color: #d0d0d0;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* optional hover only for active buttons */
+.paper .button.active:hover,
+.paper .button.has-link:hover {
+  background-color: #162b52;
+  border-color: #162b52;
+  color: #fff;
+}
+
 .section-header {
   text-transform: uppercase;
   font-size: 1.5rem;
   letter-spacing: .2rem;
-  font-weight: 600; }
+  font-weight: 600;
+}
+
 .docs-section {
   border-top: 1px solid #eee;
   padding: 4rem 0;
-  margin-bottom: 0;}
+  margin-bottom: 0;
+}
+
 .footer {
   text-align: center;
   color: rgba(0, 0, 0, 0.4);
   border-top: 1px solid #eee;
   padding: 15px 0 40px 0;
-  margin-bottom: 0;}
+  margin-bottom: 0;
+}
+
 .navbar {
-  display: none; }
+  display: none;
+}
+
 .title-subtitle h3 {
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+}
+
 .title-subtitle h5 {
-  color: rgba(0, 0, 0, 0.60); }
+  color: rgba(0, 0, 0, 0.60);
+}
+
 .image {
-  text-align: center; }
+  text-align: center;
+}
 
 /*  ================ Project styling  ================ */
 .project-container {
   margin-bottom: 30px;
 }
+
 .project-image-container {
   border: 1px solid rgba(0,0,0,0.2);
   padding: 3px;
   transition: 0.3s;
 }
+
 .project-image-container:hover {
   transition: 0.3s;
 }
+
 .project-image-container:hover img {
   opacity: 0.4;
 }
+
 .project-caption {
   padding: 3px;
 }
@@ -95,14 +170,28 @@ h4 {
 /* Larger than phone */
 @media (min-width: 550px) {
   .header {
-    margin-top: 5rem; }
+    margin-top: 5rem;
+  }
+}
+
+/* stack on small screens */
+@media (max-width: 749px) {
+  .paper {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+
+  .paper-links {
+    width: 150px;
+  }
 }
 
 /* Larger than tablet */
 @media (min-width: 750px) {
-  /* Navbar */
   .navbar + .docs-section {
-    border-top-width: 0; }
+    border-top-width: 0;
+  }
+
   .navbar,
   .navbar-spacer {
     display: block;
@@ -111,18 +200,28 @@ h4 {
     background: #fff;
     z-index: 99;
     border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee; }
+    border-bottom: 1px solid #eee;
+  }
+
   .navbar-spacer {
-    display: none; }
+    display: none;
+  }
+
   .navbar > .container {
-    width: 100%; }
+    width: 100%;
+  }
+
   .navbar-list {
     list-style: none;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+  }
+
   .navbar-item {
     position: relative;
     float: left;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+  }
+
   .navbar-link {
     text-transform: uppercase;
     font-size: 11px;
@@ -131,37 +230,45 @@ h4 {
     margin-right: 35px;
     text-decoration: none;
     line-height: 6.5rem;
-    color: #222; }
+    color: #222;
+  }
+
   .navbar-link.active {
-    color: #33C3F0; }
+    color: #33C3F0;
+  }
+
   .has-docked-nav .navbar {
     position: fixed;
     top: 0;
-    left: 0; }
-  .has-docked-nav .navbar-spacer {
-    display: block; }
-  /* Re-overiding the width 100% declaration to match size of % based container */
-  .has-docked-nav .navbar > .container {
-    width: 80%; }
+    left: 0;
+  }
 
-  /* Popover */
+  .has-docked-nav .navbar-spacer {
+    display: block;
+  }
+
+  .has-docked-nav .navbar > .container {
+    width: 80%;
+  }
+
   .popover.open {
     display: block;
   }
+
   .popover {
     display: none;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 92%;
+    left: -50%;
     background: #fff;
     border: 1px solid #eee;
     border-radius: 4px;
-    top: 92%;
-    left: -50%;
     -webkit-filter: drop-shadow(0 0 6px rgba(0,0,0,.1));
        -moz-filter: drop-shadow(0 0 6px rgba(0,0,0,.1));
-            filter: drop-shadow(0 0 6px rgba(0,0,0,.1)); }
-  .popover-item:first-child .popover-link:after, 
+            filter: drop-shadow(0 0 6px rgba(0,0,0,.1));
+  }
+
+  .popover-item:first-child .popover-link:after,
   .popover-item:first-child .popover-link:before {
     bottom: 100%;
     left: 50%;
@@ -170,24 +277,34 @@ h4 {
     height: 0;
     width: 0;
     position: absolute;
-    pointer-events: none; }
+    pointer-events: none;
+  }
+
   .popover-item:first-child .popover-link:after {
     border-color: rgba(255, 255, 255, 0);
     border-bottom-color: #fff;
     border-width: 10px;
-    margin-left: -10px; }
+    margin-left: -10px;
+  }
+
   .popover-item:first-child .popover-link:before {
     border-color: rgba(238, 238, 238, 0);
     border-bottom-color: #eee;
     border-width: 11px;
-    margin-left: -11px; }
+    margin-left: -11px;
+  }
+
   .popover-list {
     padding: 0;
     margin: 0;
-    list-style: none; }
+    list-style: none;
+  }
+
   .popover-item {
     padding: 0;
-    margin: 0; }
+    margin: 0;
+  }
+
   .popover-link {
     position: relative;
     color: #222;
@@ -199,16 +316,25 @@ h4 {
     font-size: 1.0rem;
     font-weight: 600;
     text-align: center;
-    letter-spacing: .1rem; }
+    letter-spacing: .1rem;
+  }
+
   .popover-item:first-child .popover-link {
-    border-radius: 4px 4px 0 0; }
+    border-radius: 4px 4px 0 0;
+  }
+
   .popover-item:last-child .popover-link {
     border-radius: 0 0 4px 4px;
-    border-bottom-width: 0; }
+    border-bottom-width: 0;
+  }
+
   .popover-link:hover {
     color: #fff;
-    background: #33C3F0; }
+    background: #33C3F0;
+  }
+
   .popover-link:hover,
   .popover-item:first-child .popover-link:hover:after {
-    border-bottom-color: #33C3F0; }
+    border-bottom-color: #33C3F0;
+  }
 }

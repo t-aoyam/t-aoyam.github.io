@@ -14,11 +14,20 @@ Inputs: include.paper (object with title, authors, venue, venue_icon, year, pape
       <p class="venue"><i>{{ include.paper.venue }}</i></p>
     </div>
   <div class="paper-links">
-    {% if include.paper.paper_pdf %}<a class="button" href="{{ include.paper.paper_pdf | relative_url }}" target="_blank">PDF</a>{% endif %}
-    {% if include.paper.slides %}<a class="button" href="{{ include.paper.slides | relative_url }}" target="_blank">Slides</a>{% endif %}
-    {% if include.paper.poster %}<a class="button" href="{{ include.paper.poster | relative_url }}" target="_blank">Poster</a>{% endif %}
-    {% if include.paper.video %}<a class="button" href="{{ include.paper.video }}" target="_blank">Video</a>{% endif %}
-    {% if include.paper.code %}<a class="button" href="{{ include.paper.code }}" target="_blank">Code</a>{% endif %}
+    {% assign has_pdf = include.paper.paper_pdf %}
+    <a class="button {% if has_pdf %}active has-link{% else %}disabled{% endif %}" {% if has_pdf %}href="{{ include.paper.paper_pdf | relative_url }}" target="_blank"{% endif %}>PDF</a>
+
+    {% assign has_slides = include.paper.slides %}
+    <a class="button {% if has_slides %}active has-link{% else %}disabled{% endif %}" {% if has_slides %}href="{{ include.paper.slides | relative_url }}" target="_blank"{% endif %}>Slides</a>
+
+    {% assign has_poster = include.paper.poster %}
+    <a class="button {% if has_poster %}active has-link{% else %}disabled{% endif %}" {% if has_poster %}href="{{ include.paper.poster | relative_url }}" target="_blank"{% endif %}>Poster</a>
+
+    {% assign has_video = include.paper.video %}
+    <a class="button {% if has_video %}active has-link{% else %}disabled{% endif %}" {% if has_video %}href="{{ include.paper.video }}" target="_blank"{% endif %}>Video</a>
+
+    {% assign has_code = include.paper.code %}
+    <a class="button {% if has_code %}active has-link{% else %}disabled{% endif %}" {% if has_code %}href="{{ include.paper.code }}" target="_blank"{% endif %}>Code</a>
   </div>
   </div>
 </div>
