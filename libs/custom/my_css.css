@@ -22,26 +22,29 @@ h4 {
   margin-bottom: 2px }
 .paper-buttons {
     margin-top: 2px }
-  /* arrange paper links in up to two columns */
+  /* arrange paper links in a fixed-width two-column grid
+     - width chosen so each button can accommodate the longest label
+       ("Video") and padding
+     - grid ensures two equal columns regardless of how many buttons
+       are present, keeping the right-hand column identical across entries */
   .paper-links {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 4px;
+    /* 20ch covers two buttons of ~8ch each plus gap; tweak as desired */
+    width: 20ch;
+    flex-shrink: 0; /* keep right column consistent size */
   }
   .paper .button {
-  /* force buttons to take roughly half width so 2x2 fits nicely */
-  flex: 1 1 45%;
-  display: inline-block;
-  height: 20px;
-  padding: 0 5px;
-  font-weight: 100;
-  line-height: 20px;
-  margin-bottom: 0px;
-  text-transform: none;
-  text-align: center;
-  }
-  /* ensure long labels wrap if needed */
-  .paper .button {
+    /* fill grid cell and remain same size for all buttons */
+    width: 100%;
+    height: 20px;
+    padding: 0 5px;
+    font-weight: 100;
+    line-height: 20px;
+    margin-bottom: 0px;
+    text-transform: none;
+    text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
