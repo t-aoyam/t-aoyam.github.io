@@ -48,7 +48,7 @@ h4 {
 
 /* Title slightly larger */
 .paper .title {
-  font-size: 2rem;
+  font-size: 1.4rem;
   line-height: 1.2;
   margin-bottom: 8px;   /* keeps spacing to authors */
 }
@@ -92,7 +92,7 @@ h4 {
   margin: 0;
   box-sizing: border-box;
   white-space: nowrap;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1;
   border-radius: 4px;
   text-decoration: none;
