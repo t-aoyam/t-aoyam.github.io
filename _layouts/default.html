@@ -23,11 +23,16 @@ img { border-radius: 50%; }
   background-color: #eaeaea;
   color: #333;
   font-size: 0.9em;
-  padding: 0.1em 0.3em;
+  padding: 0.2em 0.3em;
   border-radius: 4px;
   font-weight: bold;
   text-align: center;
   white-space: nowrap;
+
+  /* make every badge the same width and keep text tight */
+  width: 100%;           /* fill wrapper column */
+  box-sizing: border-box;
+  line-height: 1;        /* reduce vertical gap between wrapped lines */
 }
 
 /* Left column reserved for the badge */
