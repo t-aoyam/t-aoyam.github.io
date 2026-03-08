@@ -65,6 +65,7 @@ h4 {
   width: 114px; /* 54 + 54 + 6 */
   align-self: center;
   justify-self: end;
+  flex-shrink: 0;
 }
 
 .paper .button {
@@ -111,7 +112,7 @@ h4 {
 
 /* Title slightly larger */
 .paper .title {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   line-height: 1.2;
   margin-bottom: 4px;   /* keeps spacing to authors */
 }
