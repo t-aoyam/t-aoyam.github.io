@@ -22,14 +22,30 @@ h4 {
   margin-bottom: 2px }
 .paper-buttons {
     margin-top: 2px }
-.paper .button {
+  /* arrange paper links in up to two columns */
+  .paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .paper .button {
+  /* force buttons to take roughly half width so 2x2 fits nicely */
+  flex: 1 1 45%;
   display: inline-block;
   height: 20px;
   padding: 0 5px;
   font-weight: 100;
   line-height: 20px;
   margin-bottom: 0px;
-  text-transform: none; }
+  text-transform: none;
+  text-align: center;
+  }
+  /* ensure long labels wrap if needed */
+  .paper .button {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 .section-header {
   text-transform: uppercase;
   font-size: 1.5rem;

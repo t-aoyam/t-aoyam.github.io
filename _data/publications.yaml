@@ -5,6 +5,7 @@ papers:
     venue: "arXiv."
     paper_pdf: https://arxiv.org/abs/2510.24081
     code: https://github.com/mrlbenchmarks/global-piqa
+#    video:
     nlp: y
     selected: n
     venue_icon: "arXiv"
@@ -14,7 +15,8 @@ papers:
     authors: "Tatsuya Aoyama, Ethan Wilcox and Nathan Schneider"
     venue: "In NeurIPS 2025 First Workshop on CogInterp: Interpreting Cognition in Deep Learning Models (CogInterp @ NeurIPS)."
     paper_pdf: https://arxiv.org/abs/2511.16893
-    code: 
+    code: https://github.com/t-aoyam/predict-ih-review
+#    video:
     nlp: y
     selected: y
     venue_icon: "Cog<br>Interp<br>@NeurIPS"
@@ -24,7 +26,8 @@ papers:
     authors: "Wesley Scivetti, Tatsuya Aoyama, Ethan Wilcox and Nathan Schneider"
     venue: "In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025, main long)."
     paper_pdf: https://arxiv.org/abs/2506.04408
-    code: 
+    code: https://github.com/WesScivetti/BabyAlone
+    video: https://underline.io/events/502/posters/20964/poster/131151-unpacking-let-alone-human-scale-models-generalize-to-a-rare-construction-in-form-but-not-meaning
     nlp: y
     selected: n
     venue_icon: "EMNLP"
@@ -35,6 +38,7 @@ papers:
     venue: "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025, main long)."
     paper_pdf: https://arxiv.org/abs/2502.18802
     code: https://github.com/t-aoyam/pt-and-ppp
+    video: http://underline.io/events/485/posters/20583/poster/123223-language-models-grow-less-humanlike-beyond-phase-transition
     nlp: y
     selected: y
     venue_icon: "ACL"
@@ -45,6 +49,7 @@ papers:
     venue: "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025, main long)."
     paper_pdf: https://arxiv.org/abs/2502.18795
     code: https://github.com/xiulinyang/multilingual-LM
+    video: https://underline.io/events/485/posters/20583/poster/123238-anything-goesquestion-a-crosslinguistic-study-of-im-possible-language-learning-in-lms
     nlp: y
     selected: y
     venue_icon: "ACL"
@@ -74,6 +79,7 @@ papers:
     authors: "Amir Zeldes, Tatsuya Aoyama, Janet Yang Liu, Siyao Peng, Debopam Das, and Luke Gessler"
     venue: "Computational Linguistics, 1-47."
     paper_pdf: https://direct.mit.edu/coli/article/doi/10.1162/coli_a_00538/124464/eRST-A-Signaled-Graph-Theory-of-Discourse
+    video: https://underline.io/events/469/sessions/18807/lecture/106340-erst-a-signaled-graph-theory-of-discourse-relations-and-organization
     nlp: y
     venue_icon: "CL"
 
