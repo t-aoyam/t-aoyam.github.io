@@ -36,6 +36,7 @@ h4 {
   grid-template-columns: 1fr 100px;
   column-gap: 16px;
   align-items: start;
+  width: 100%;
 }
 
 .paper .title {
@@ -66,8 +67,8 @@ h4 {
 /* all buttons same size */
 .paper .button {
   width: 100%;
-  height: 25px;
-  line-height: 25px;
+  height: 20px;
+  line-height: 20px;
   padding: 0 8px;
   margin: 0;
 

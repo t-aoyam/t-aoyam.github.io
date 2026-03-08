@@ -60,6 +60,7 @@ papers:
     venue: "In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP 2024, main long)."
     paper_pdf: https://aclanthology.org/2024.emnlp-main.283/
     code: https://github.com/t-aoyam/l2lm-sentence-processing
+    video: https://underline.io/events/469/posters/18790/poster/107009-predicting-nonnative-sentence-processing-with-l2lms
     nlp: y
     sla: y
     selected: y
@@ -71,6 +72,7 @@ papers:
     venue: "In Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP 2024, main long)."
     paper_pdf: https://aclanthology.org/2024.emnlp-main.684/
     code: https://github.com/gucorpling/gum2pdtb/tree/main
+    video: https://underline.io/events/469/posters/18792/poster/107552-gdtb-genre-diverse-data-for-english-shallow-discourse-parsing-across-modalities-text-types-and-domains
     nlp: y
     venue_icon: "EMNLP"
 
