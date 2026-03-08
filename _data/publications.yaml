@@ -152,6 +152,7 @@ papers:
     authors: "Tatsuya Aoyama, Nathan Schneider"
     venue: "North American Chapter of the Association for Computational Linguistics Student Research Workshop (NAACL-SRW 2022)"
     paper_pdf: https://aclanthology.org/2022.naacl-srw.25/
+    video: https://underline.io/events/325/posters/11797/poster/54463-probe-less-probing-of-bert-s-layer-wise-linguistic-knowledge-with-masked-word-prediction
     nlp: y
     selected: y
     venue_icon: "NAACL<br>SRW"
