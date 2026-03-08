@@ -33,7 +33,7 @@ h4 {
      left = text
      right = fixed button area */
   display: grid;
-  grid-template-columns: 1fr 125px;
+  grid-template-columns: 1fr 100px;
   column-gap: 16px;
   align-items: start;
 }
@@ -183,7 +183,7 @@ h4 {
   }
 
   .paper-links {
-    width: 125px;
+    width: 100px;
   }
 }
 

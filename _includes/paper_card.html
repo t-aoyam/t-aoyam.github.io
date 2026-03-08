@@ -17,11 +17,11 @@ Inputs: include.paper (object with title, authors, venue, venue_icon, year, pape
     {% assign has_pdf = include.paper.paper_pdf %}
     <a class="button {% if has_pdf %}active has-link{% else %}disabled{% endif %}" {% if has_pdf %}href="{{ include.paper.paper_pdf | relative_url }}" target="_blank"{% endif %}>PDF</a>
 
-    {% assign has_slides = include.paper.slides %}
-    <a class="button {% if has_slides %}active has-link{% else %}disabled{% endif %}" {% if has_slides %}href="{{ include.paper.slides | relative_url }}" target="_blank"{% endif %}>Slides</a>
+    <!-- {% assign has_slides = include.paper.slides %}
+    <a class="button {% if has_slides %}active has-link{% else %}disabled{% endif %}" {% if has_slides %}href="{{ include.paper.slides | relative_url }}" target="_blank"{% endif %}>Slides</a> -->
 
-    {% assign has_poster = include.paper.poster %}
-    <a class="button {% if has_poster %}active has-link{% else %}disabled{% endif %}" {% if has_poster %}href="{{ include.paper.poster | relative_url }}" target="_blank"{% endif %}>Poster</a>
+    <!-- {% assign has_poster = include.paper.poster %}
+    <a class="button {% if has_poster %}active has-link{% else %}disabled{% endif %}" {% if has_poster %}href="{{ include.paper.poster | relative_url }}" target="_blank"{% endif %}>Poster</a> -->
 
     {% assign has_video = include.paper.video %}
     <a class="button {% if has_video %}active has-link{% else %}disabled{% endif %}" {% if has_video %}href="{{ include.paper.video }}" target="_blank"{% endif %}>Video</a>
