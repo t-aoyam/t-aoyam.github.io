@@ -50,7 +50,7 @@ h4 {
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 28px);
+  grid-template-rows: repeat(2, 20px);
   gap: 6px;
 }
 
