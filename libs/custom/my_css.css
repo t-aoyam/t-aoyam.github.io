@@ -183,6 +183,7 @@ h4 {
   }
 
   .paper-links {
+    justify-self: end;
     width: 100px;
   }
 }
