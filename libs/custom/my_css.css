@@ -75,7 +75,7 @@ h4 {
   display: grid;
   grid-template-columns: repeat(2, 54px);
   grid-template-rows: repeat(2, 22px);
-  gap: 12px;
+  gap: 6px;
   width: 114px; /* 54 + 54 + 6 */
   align-self: center;
   justify-self: end;
