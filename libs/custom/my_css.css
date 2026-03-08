@@ -26,18 +26,39 @@ h4 {
 }
 
 .paper {
-  margin-bottom: 20px;
-  line-height: 1.2;
-
-  /* make each publication entry two columns:
-     left = text
-     right = fixed button area */
-  display: grid;
-  grid-template-columns: 1fr 100px;
-  /* grid-template-columns: 70px minmax(0, 1fr) 100px; */
-  column-gap: 16px;
-  align-items: start;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
   width: 100%;
+}
+
+.paper-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.venue-icon-wrapper {
+  flex: 0 0 70px;
+}
+
+.paper-meta {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.paper-links {
+  flex: 0 0 120px;
+  width: 120px;
+  margin-left: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 28px);
+  gap: 6px;
 }
 
 .paper .title {
@@ -51,18 +72,6 @@ h4 {
 .paper-buttons {
   margin-top: 2px;
   justify-self: end;
-}
-
-/* fixed 2x2 button block */
-.paper-links {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 28px);
-  gap: 6px;
-
-  /* fixed width so the right column is identical for every paper */
-  width: 150px;
-  flex-shrink: 0;
 }
 
 /* all buttons same size */
