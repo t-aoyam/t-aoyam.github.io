@@ -1,4 +1,14 @@
 papers:
+  - title: "Predicting the Emergence of Induction Heads in Language Model Pretraining."
+    year: "2026"
+    authors: "Tatsuya Aoyama, Ethan Wilcox and Nathan Schneider"
+    venue: "In Proceedings of the 43rd International Conference on Machine Learning (ICML 2026)."
+    paper_pdf: https://arxiv.org/abs/2511.16893
+    code: https://github.com/t-aoyam/predict-ih-review
+    nlp: y
+    selected: y
+    venue_icon: "ICML"
+
   - title: "Global PIQA: Evaluating Physical Commonsense Reasoning Across 100+ Languages and Cultures"
     year: "2025"
     authors: "Tyler A Chang, Catherine Arnett, ..., Tatsuya Aoyama, ..."
@@ -14,11 +24,11 @@ papers:
     year: "2025"
     authors: "Tatsuya Aoyama, Ethan Wilcox and Nathan Schneider"
     venue: "In NeurIPS 2025 First Workshop on CogInterp: Interpreting Cognition in Deep Learning Models (CogInterp @ NeurIPS)."
-    paper_pdf: https://arxiv.org/abs/2511.16893
+    paper_pdf: https://arxiv.org/abs/2511.16893v1
     code: https://github.com/t-aoyam/predict-ih-review
 #    video:
     nlp: y
-    selected: y
+    selected: n
     venue_icon: "Cog<br>Interp<br>@NeurIPS"
 
   - title: "Unpacking Let Alone: Human-Scale Models Generalize to a Rare Construction in Form but not Meaning."
