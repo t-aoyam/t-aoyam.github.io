@@ -3,7 +3,7 @@ papers:
     year: "2026"
     authors: "Tatsuya Aoyama, Ethan Wilcox and Nathan Schneider"
     venue: "In Proceedings of the 43rd International Conference on Machine Learning (ICML 2026)."
-    paper_pdf: https://arxiv.org/abs/2511.16893
+    paper_pdf: https://openreview.net/forum?id=50E1hqm6qk&noteId=qwqd05KxuW
     code: https://github.com/t-aoyam/predict-ih-review
     nlp: y
     selected: y
