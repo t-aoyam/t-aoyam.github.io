@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>函館 観光プラン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sea:#1c3350;
+    --ink:#242f38;
+    --haze:#5f7690;
+    --brass:#c2883f;
+    --paper:#f2f4f3;
+    --card:#fbfcfb;
+    --mist:#dde3e4;
+    --font-display:"Shippori Mincho", serif;
+    --font-body:"Zen Kaku Gothic New", sans-serif;
+    --font-mono:"IBM Plex Mono", monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font-body);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 96px}
+
+  /* ---------- header ---------- */
+  header{padding:72px 0 40px;text-align:center}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:.72rem;
+    letter-spacing:.32em;
+    color:var(--haze);
+    text-transform:uppercase;
+  }
+  h1{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(2.2rem,6vw,3.1rem);
+    letter-spacing:.18em;
+    color:var(--sea);
+    margin:.35em 0 .3em;
+  }
+  .lede{font-size:.92rem;color:var(--haze);max-width:34em;margin:0 auto}
+
+  /* ---------- axis selector ---------- */
+  .selector{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    justify-content:center;
+    margin:36px 0 12px;
+  }
+  .axis{
+    display:flex;
+    background:var(--card);
+    border:1px solid var(--mist);
+    border-radius:999px;
+    padding:4px;
+    position:relative;
+  }
+  .axis button{
+    appearance:none;
+    border:0;
+    background:transparent;
+    font-family:var(--font-body);
+    font-size:.95rem;
+    font-weight:500;
+    color:var(--haze);
+    padding:9px 26px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:color .25s ease, background-color .25s ease;
+  }
+  .axis button[aria-pressed="true"]{
+    background:var(--sea);
+    color:#f2ede2;
+  }
+  .axis button:focus-visible{
+    outline:2px solid var(--brass);
+    outline-offset:2px;
+  }
+  .plan-name{
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:.75rem;
+    letter-spacing:.22em;
+    color:var(--brass);
+    margin-bottom:40px;
+    min-height:1.4em;
+  }
+
+  /* ---------- plan panels ---------- */
+  .panel{display:none;animation:rise .45s ease both}
+  .panel.active{display:block}
+  @keyframes rise{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .panel{animation:none}
+    html{scroll-behavior:auto}
+  }
+
+  .plan-intro{
+    background:var(--card);
+    border:1px solid var(--mist);
+    border-left:3px solid var(--brass);
+    border-radius:0 10px 10px 0;
+    padding:18px 22px;
+    font-size:.92rem;
+    margin-bottom:44px;
+  }
+
+  .day-label{
+    font-family:var(--font-display);
+    font-size:1.15rem;
+    font-weight:600;
+    letter-spacing:.14em;
+    color:var(--sea);
+    margin:48px 0 24px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .day-label::after{content:"";flex:1;height:1px;background:var(--mist)}
+  .day-label:first-of-type{margin-top:0}
+
+  /* timeline */
+  .timeline{list-style:none;position:relative;padding-left:0}
+  .stop{
+    display:grid;
+    grid-template-columns:74px 20px 1fr;
+    gap:0 14px;
+    position:relative;
+  }
+  .stop .time{
+    font-family:var(--font-mono);
+    font-size:.8rem;
+    color:var(--haze);
+    text-align:right;
+    padding-top:3px;
+    white-space:nowrap;
+  }
+  .stop .node{position:relative}
+  .maplink{
+    color:inherit;
+    text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb, var(--brass) 55%, transparent);
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .maplink:hover,
+  .maplink:focus-visible{
+    color:var(--brass);
+    border-bottom-color:var(--brass);
+  }
+  .maplink::after{
+    content:"↗";
+    font-family:var(--font-mono);
+    font-size:.72em;
+    margin-left:.15em;
+    color:var(--brass);
+  }
+  .stop .node::before{ /* line */
+    content:"";
+    position:absolute;
+    left:50%;top:12px;bottom:-12px;
+    width:1px;
+    background:var(--mist);
+    transform:translateX(-50%);
+  }
+  .stop:last-child .node::before{display:none}
+  .stop .node::after{ /* dot */
+    content:"";
+    position:absolute;
+    left:50%;top:8px;
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--haze);
+    transform:translateX(-50%);
+  }
+  .stop.highlight .node::after{background:var(--brass);border-color:var(--brass)}
+  .stop .body{padding-bottom:34px}
+  .stop h3{
+    font-family:var(--font-display);
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--sea);
+    letter-spacing:.04em;
+  }
+  .stop p{font-size:.9rem;margin-top:4px}
+  .tag{
+    display:inline-block;
+    font-family:var(--font-mono);
+    font-size:.68rem;
+    letter-spacing:.08em;
+    color:var(--brass);
+    border:1px solid color-mix(in srgb, var(--brass) 45%, transparent);
+    border-radius:4px;
+    padding:1px 8px;
+    margin-left:8px;
+    vertical-align:2px;
+    white-space:nowrap;
+  }
+
+  /* ---------- common notes ---------- */
+  .notes{margin-top:72px}
+  .notes-title{
+    font-family:var(--font-display);
+    font-size:1.3rem;
+    font-weight:600;
+    letter-spacing:.14em;
+    color:var(--sea);
+    text-align:center;
+    margin-bottom:28px;
+  }
+  details{
+    background:var(--card);
+    border:1px solid var(--mist);
+    border-radius:10px;
+    margin-bottom:12px;
+    overflow:hidden;
+  }
+  summary{
+    cursor:pointer;
+    padding:15px 20px;
+    font-weight:700;
+    font-size:.93rem;
+    color:var(--sea);
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"＋";
+    font-family:var(--font-mono);
+    color:var(--brass);
+    transition:transform .25s ease;
+  }
+  details[open] summary::after{transform:rotate(45deg)}
+  details .inner{padding:0 20px 18px;font-size:.88rem}
+  details .inner p+p{margin-top:.7em}
+  strong{color:var(--sea)}
+
+  /* ---------- food & stay cards ---------- */
+  .section-block{margin-top:72px}
+  .sub-label{
+    font-family:var(--font-mono);
+    font-size:.72rem;
+    letter-spacing:.28em;
+    color:var(--brass);
+    text-align:center;
+    margin:32px 0 16px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:12px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--mist);
+    border-radius:10px;
+    padding:16px 18px 14px;
+  }
+  .card h3{
+    font-family:var(--font-display);
+    font-size:1rem;
+    font-weight:600;
+    color:var(--sea);
+    letter-spacing:.03em;
+  }
+  .card .meta{
+    font-family:var(--font-mono);
+    font-size:.68rem;
+    letter-spacing:.1em;
+    color:var(--haze);
+    display:block;
+    margin:2px 0 8px;
+  }
+  .card p{font-size:.84rem;line-height:1.7}
+  .card .fit{
+    display:inline-block;
+    margin-top:10px;
+    font-size:.72rem;
+    font-weight:700;
+    color:var(--brass);
+  }
+  .price-note{
+    text-align:center;
+    font-size:.8rem;
+    color:var(--haze);
+    margin-top:20px;
+  }
+
+  footer{
+    margin-top:80px;
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:.68rem;
+    letter-spacing:.2em;
+    color:var(--haze);
+  }
+
+  @media (max-width:520px){
+    .stop{grid-template-columns:58px 16px 1fr;gap:0 10px}
+    .stop .time{font-size:.72rem}
+    .axis button{padding:8px 18px;font-size:.88rem}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Hakodate Travel Notes</p>
+    <h1>函館</h1>
+    <p class="lede">坂道と教会、赤レンガ倉庫、山頂からの夜景。<br>一泊二日、市内の交通手段に合わせてプランを切り替えてください。</p>
+  </header>
+
+  <div class="selector" role="group" aria-label="プラン選択">
+    <div class="axis" id="axis-transport">
+      <button type="button" data-value="nocar" aria-pressed="true">車なし</button>
+      <button type="button" data-value="car" aria-pressed="false">レンタカー</button>
+    </div>
+  </div>
+  <p class="plan-name" id="plan-name" aria-live="polite">PLAN 01 — 市電とバスで巡る一泊二日</p>
+
+  <!-- ============ ① 車なし(市電・バス・徒歩) ============ -->
+  <section class="panel active" id="panel-nocar">
+    <p class="plan-intro">函館駅を起点に、市電と徒歩だけで西部地区・五稜郭・湯の川まで十分に周れる二日間。市電・函館バスの「共通1日乗車券」(大人1,000円前後)を初日に買っておくと、乗るたびの支払いを気にしなくて済みます。</p>
+    <h2 class="day-label">一日目 ─ 朝市から西部地区、夜景まで</h2>
+    <ol class="timeline">
+      <li class="stop"><span class="time">11:00</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%87%BD%E9%A4%A8%E9%A7%85" target="_blank" rel="noopener">函館駅</a> 着</h3><p>新幹線なら新函館北斗から特急「はこだてライナー」で約20分、飛行機なら函館空港から函館バスで市内へ約20分。荷物はコインロッカーかホテルのフロント預けへ。</p></div></li>
+      <li class="stop"><span class="time">11:30</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%87%BD%E9%A4%A8%E6%9C%9D%E5%B8%82" target="_blank" rel="noopener">函館朝市</a></h3><p>駅から徒歩1分。<a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A9%E3%82%93%E3%81%B6%E3%82%8A%E6%A8%AA%E4%B8%81%20%E5%87%BD%E9%A4%A8%E6%9C%9D%E5%B8%82" target="_blank" rel="noopener">どんぶり横丁</a>に海鮮丼の店が20軒以上並ぶので、好きな具材を選んで海鮮丼ランチ。活イカ釣りの水槽が出ている店も。</p></div></li>
+      <li class="stop"><span class="time">13:00</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%85%83%E7%94%BA%20%E5%87%BD%E9%A4%A8" target="_blank" rel="noopener">元町エリア</a></h3><p>市電で「十字街」下車、坂道散策へ。<a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E5%B9%A1%E5%9D%82" target="_blank" rel="noopener">八幡坂</a>から<a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%87%BD%E9%A4%A8%E3%83%8F%E3%83%AA%E3%82%B9%E3%83%88%E3%82%B9%E6%AD%A3%E6%95%99%E4%BC%9A" target="_blank" rel="noopener">ハリストス正教会</a>、<a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E3%82%AB%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E5%85%83%E7%94%BA%E6%95%99%E4%BC%9A" target="_blank" rel="noopener">カトリック元町教会</a>、<a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E6%97%A7%E5%87%BD%E9%A4%A8%E5%8C%BA%E5%85%AC%E4%BC%9A%E5%A0%82" target="_blank" rel="noopener">旧函館区公会堂</a>、<a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E6%97%A7%E3%82%A4%E3%82%AE%E3%83%AA%E3%82%B9%E9%A0%98%E4%BA%8B%E9%A4%A8%20%E5%87%BD%E9%A4%A8" target="_blank" rel="noopener">旧イギリス領事館</a>まで教会と洋館が徒歩圏に密集。</p></div></li>
+      <li class="stop"><span class="time">15:00</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E6%A3%AE%E8%B5%A4%E3%83%AC%E3%83%B3%E3%82%AC%E5%80%89%E5%BA%AB" target="_blank" rel="noopener">金森赤レンガ倉庫</a></h3><p>元町から坂を下って徒歩10分ほど。カフェとショップが並ぶベイエリアの中心で一息。</p></div></li>
+      <li class="stop"><span class="time">16:30</span><span class="node"></span>
+        <div class="body"><h3>チェックイン</h3><p>ベイエリアか駅前のホテルなら、ここまで移動はすべて徒歩と市電で完結。</p></div></li>
+      <li class="stop highlight"><span class="time">18:00</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%87%BD%E9%A4%A8%E5%B1%B1%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4" target="_blank" rel="noopener">函館山ロープウェイ</a><span class="tag">日本三大夜景</span></h3><p>日没前後30〜60分が最混雑。オンラインチケットを買っておくと乗り場の待ち時間を短縮できる。山頂は風が強いので上着必携。</p></div></li>
+      <li class="stop"><span class="time">19:30</span><span class="node"></span>
+        <div class="body"><h3>ディナー</h3><p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%94%E5%B3%B6%E8%BB%92%20%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">五島軒本店</a>の元祖カレー、または<a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E3%81%AF%E3%81%93%E3%81%A0%E3%81%A6%E3%83%93%E3%83%BC%E3%83%AB" target="_blank" rel="noopener">はこだてビール</a>直営店でクラフトビール＋海鮮。どちらも元町・ベイエリアから徒歩圏。</p></div></li>
+    </ol>
+    <h2 class="day-label">二日目 ─ 五稜郭から湯の川へ</h2>
+    <ol class="timeline">
+      <li class="stop"><span class="time">9:00</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%94%E7%A8%9C%E9%83%AD%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank" rel="noopener">五稜郭タワー</a></h3><p>市電「五稜郭公園前」から徒歩15分。展望台から星形の堀を一望してから<a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%94%E7%A8%9C%E9%83%AD%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">五稜郭公園</a>を一周(約30分)。桜の時期は特に混雑。</p></div></li>
+      <li class="stop"><span class="time">11:30</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%A1%A9%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E5%91%B3%E5%BD%A9%20%E4%BA%94%E7%A8%9C%E9%83%AD%E5%BA%97" target="_blank" rel="noopener">塩ラーメン味彩 五稜郭店</a></h3><p>あっさり塩ラーメンの名店。五稜郭観光の合間にちょうどいい距離。</p></div></li>
+      <li class="stop"><span class="time">13:00</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E6%B9%AF%E3%81%AE%E5%B7%9D%E6%B8%A9%E6%B3%89%20%E8%B6%B3%E6%B9%AF" target="_blank" rel="noopener">湯の川温泉 足湯</a></h3><p>函館駅前から市電で終点まで約30分。無料の足湯や日帰り入浴でひと休み。</p></div></li>
+      <li class="stop"><span class="time">15:30</span><span class="node"></span>
+        <div class="body"><h3>帰路へ</h3><p>湯の川からは函館空港行きバスも出ているので、そのまま空港へ抜ける動線が組める。新函館北斗駅へ戻る場合は函館駅まで市電で戻ってはこだてライナーに乗り換え。</p></div></li>
+    </ol>
+  </section>
+
+  <!-- ============ ② レンタカー ============ -->
+  <section class="panel" id="panel-car">
+    <p class="plan-intro">車があると大沼・トラピスト方面まで行動半径が広がる二日間。函館山は夏季(4月下旬〜11月上旬)の17〜22時にマイカー規制があり、山頂へは車で上がれずロープウェイかタクシー利用が前提になる点だけ要注意。市街散策は狭い坂道が多いので、コインパーキングに停めて歩くのが快適です。</p>
+    <h2 class="day-label">一日目 ─ 空港から市街、夜景まで</h2>
+    <ol class="timeline">
+      <li class="stop"><span class="time">10:00</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E3%83%AC%E3%83%B3%E3%82%BF%E3%82%AB%E3%83%BC%20%E5%87%BD%E9%A4%A8%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener">レンタカーを借りる</a></h3><p>函館空港カウンターが便利。新函館北斗駅前にも各社の店舗があるので、新幹線利用ならそちらでも。</p></div></li>
+      <li class="stop"><span class="time">10:30</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E3%83%88%E3%83%A9%E3%83%94%E3%82%B9%E3%83%81%E3%83%8C%E4%BF%AE%E9%81%93%E9%99%A2" target="_blank" rel="noopener">トラピスチヌ修道院</a></h3><p>空港から車で約15分。売店でクッキーやマダレナを購入できる、静かな寄り道。</p></div></li>
+      <li class="stop"><span class="time">11:30</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E7%AB%8B%E5%BE%85%E5%B2%AC" target="_blank" rel="noopener">立待岬</a></h3><p>石川啄木ゆかりの岬。断崖から津軽海峡を一望、車で15分ほど。</p></div></li>
+      <li class="stop"><span class="time">12:30</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%87%BD%E9%A4%A8%E6%9C%9D%E5%B8%82" target="_blank" rel="noopener">函館朝市</a></h3><p>周辺の市営駐車場を利用。どんぶり横丁で海鮮丼ランチ。</p></div></li>
+      <li class="stop"><span class="time">14:00</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%85%83%E7%94%BA%20%E5%87%BD%E9%A4%A8" target="_blank" rel="noopener">元町エリア</a></h3><p>坂の上まで車で上がれなくはないが道が狭いので、近くのコインパーキングに停めて<a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E5%B9%A1%E5%9D%82" target="_blank" rel="noopener">八幡坂</a>周辺を徒歩で。教会群と洋館を巡る。</p></div></li>
+      <li class="stop"><span class="time">15:30</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E6%A3%AE%E8%B5%A4%E3%83%AC%E3%83%B3%E3%82%AC%E5%80%89%E5%BA%AB" target="_blank" rel="noopener">金森赤レンガ倉庫</a></h3><p>周辺にコインパーキング複数あり。カフェ休憩とショッピング。</p></div></li>
+      <li class="stop"><span class="time">17:00</span><span class="node"></span>
+        <div class="body"><h3>チェックイン</h3><p>宿の駐車場を確保。湯の川温泉泊なら夜景の帰りに車で15分ほどの距離。</p></div></li>
+      <li class="stop highlight"><span class="time">18:30</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%87%BD%E9%A4%A8%E5%B1%B1%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%82%A4" target="_blank" rel="noopener">函館山ロープウェイ</a><span class="tag">日本三大夜景</span></h3><p>夏季17〜22時はマイカー規制で山頂まで車では上がれない。ロープウェイ乗り場近くの有料駐車場に車を置いてロープウェイで。</p></div></li>
+      <li class="stop"><span class="time">20:00</span><span class="node"></span>
+        <div class="body"><h3>ディナー</h3><p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E8%8A%B1%E3%81%84%E3%81%A1%E3%82%82%E3%82%93%E3%82%81%20%E5%A4%A7%E6%89%8B%E7%94%BA" target="_blank" rel="noopener">花いちもんめ</a>などの大手町エリアの海鮮居酒屋なら、宿からの移動も苦にならない。</p></div></li>
+    </ol>
+    <h2 class="day-label">二日目 ─ 大沼・トラピストまで足を伸ばす</h2>
+    <ol class="timeline">
+      <li class="stop"><span class="time">9:00</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%B2%BC%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">大沼公園</a></h3><p>市街から車で約40分。<a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%B2%BC%E5%9B%BD%E5%AE%9A%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">大沼国定公園</a>内、駒ヶ岳を背景に大沼・小沼を周遊。遊覧船やレンタサイクルも選べる。</p></div></li>
+      <li class="stop"><span class="time">11:30</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E6%B2%BC%E3%81%AE%E5%AE%B6%20%E5%A4%A7%E6%B2%BC%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">沼の家</a></h3><p>大沼名物の三色だんごの老舗。軽めのランチ代わりに、公園散策のあとで。</p></div></li>
+      <li class="stop"><span class="time">13:30</span><span class="node"></span>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E3%83%88%E3%83%A9%E3%83%94%E3%82%B9%E3%83%88%E4%BF%AE%E9%81%93%E9%99%A2" target="_blank" rel="noopener">トラピスト修道院</a></h3><p>大沼から車で約20分(七飯町)。ソフトクリームとバタークッキーが名物、資料館の見学も可能。</p></div></li>
+      <li class="stop"><span class="time">15:30</span><span class="node"></span>
+        <div class="body"><h3>空港・駅へ戻り返却</h3><p>大沼から函館空港まで車で約40分、新函館北斗駅までも同程度。返却手続きの時間を見込んで早めに出発を。</p></div></li>
+    </ol>
+  </section>
+
+  <!-- ============ food ============ -->
+  <section class="section-block">
+    <h2 class="notes-title">ごはん</h2>
+
+    <p class="sub-label">LUNCH</p>
+    <div class="grid">
+      <div class="card">
+        <h3>どんぶり横丁(函館朝市)</h3>
+        <span class="meta">函館駅前 · 海鮮丼</span>
+        <p>20軒以上の店が並ぶ丼横丁。イクラ・ウニ・カニなど好きな具を選んで自分だけの丼に。朝早くから営業。</p>
+      </div>
+      <div class="card">
+        <h3>きくよ食堂</h3>
+        <span class="meta">函館朝市内 · 海鮮丼</span>
+        <p>朝市の中でも特に有名な老舗。渡辺食堂と並ぶ二大巨頭で、観光客にも地元にも定評。</p>
+      </div>
+      <div class="card">
+        <h3>ラッキーピエロ ベイエリア本店</h3>
+        <span class="meta">ベイエリア · ご当地バーガー</span>
+        <p>函館名物のローカルバーガーチェーン。看板のチャイニーズチキンバーガーは一度は試す価値あり。</p>
+      </div>
+      <div class="card">
+        <h3>塩ラーメン味彩 五稜郭店</h3>
+        <span class="meta">五稜郭周辺 · 塩ラーメン</span>
+        <p>あっさり澄んだ塩ラーメンの名店。五稜郭タワー観光の合間にちょうどいい立地。</p>
+      </div>
+      <div class="card">
+        <h3>沼の家</h3>
+        <span class="meta">大沼公園 · だんご</span>
+        <p>大沼名物の三色だんご。餅は保存料なしで日持ちしないので、その場か当日中に。</p>
+        <span class="fit">レンタカープラン向き</span>
+      </div>
+    </div>
+
+    <p class="sub-label">DINNER</p>
+    <div class="grid">
+      <div class="card">
+        <h3>五島軒 本店</h3>
+        <span class="meta">元町 · 洋食</span>
+        <p>明治創業、函館を代表する老舗洋食店。名物の元祖函館カレーは種類豊富で、コースでの正統派ディナーも。</p>
+      </div>
+      <div class="card">
+        <h3>はこだてビール</h3>
+        <span class="meta">ベイエリア · 地ビール×海鮮</span>
+        <p>赤レンガ倉庫近くの直営レストラン。できたてクラフトビールと海鮮料理の相性がいい。</p>
+      </div>
+      <div class="card">
+        <h3>花いちもんめ</h3>
+        <span class="meta">大手町 · 海鮮居酒屋</span>
+        <p>いか刺しをはじめとした海鮮居酒屋。地元客も多く、夜遅くまで営業しているのが心強い。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ stay ============ -->
+  <section class="section-block">
+    <h2 class="notes-title">宿</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>ラビスタ函館ベイ本館</h3>
+        <span class="meta">ベイエリア · 展望温泉</span>
+        <p>金森赤レンガ倉庫のすぐそば。最上階の展望大浴場から函館山と港を望める。海鮮丼の朝食ビュッフェも評判。</p>
+        <span class="fit">車なしプランと好相性</span>
+      </div>
+      <div class="card">
+        <h3>函館国際ホテル</h3>
+        <span class="meta">函館駅前 · 老舗大型</span>
+        <p>駅・朝市・市電乗り場すべて徒歩圏の便利な立地。大規模で部屋タイプの選択肢も広い。</p>
+        <span class="fit">車なしプランと好相性</span>
+      </div>
+      <div class="card">
+        <h3>湯の川温泉 竹葉新葉亭</h3>
+        <span class="meta">湯の川 · 温泉旅館</span>
+        <p>露天風呂付き客室がある落ち着いた温泉旅館。空港からも近く、二日目に温泉宿へ移る組み方も。</p>
+      </div>
+      <div class="card">
+        <h3>函館湯の川プリンスホテル 渚亭</h3>
+        <span class="meta">湯の川 · 海沿い温泉リゾート</span>
+        <p>海に面した大浴場を持つ大型温泉リゾート。空港連絡バスもあり、車なしでもアクセス可能。</p>
+      </div>
+    </div>
+    <p class="price-note">料金は夏季(7〜9月)や祭事期に上がりやすい。函館山の夜景が見える部屋・時間帯は早めの予約が安心。</p>
+  </section>
+
+  <!-- ============ common notes ============ -->
+  <section class="notes">
+    <h2 class="notes-title">共通メモ</h2>
+    <details>
+      <summary>東京からのアクセス(新幹線 vs 飛行機)</summary>
+      <div class="inner">
+        <p><strong>新幹線:</strong>東京から新函館北斗まで約4時間強(はやぶさ)。新函館北斗から函館駅までは特急「はこだてライナー」で約20分。乗り換えなしで市街地まで着けるのが強み。</p>
+        <p><strong>飛行機:</strong>羽田─函館は約1時間20分。函館空港から市内まで函館バスで約20分と近く、所要時間の総量では飛行機が有利なことが多い。ただし空港・便数の都合で価格や時間帯の選択肢は新幹線より狭い。</p>
+      </div>
+    </details>
+    <details>
+      <summary>市電・バス攻略(車なしの生命線)</summary>
+      <div class="inner">
+        <p>函館駅前から市電で「十字街」(西部地区)まで約6分、「五稜郭公園前」まで約15分、終点「湯の川」まで約30分と、主要スポットは一本の路線でほぼ繋がる。市電・函館バス共通の1日乗車券(大人1,000円前後)を初日の朝に買っておくと楽。</p>
+        <p>元町エリアは坂道が多いので、歩きやすい靴で。石畳やスロープの坂もありベビーカー・スーツケースは苦戦しやすい。</p>
+      </div>
+    </details>
+    <details>
+      <summary>函館山ロープウェイ攻略</summary>
+      <div class="inner">
+        <p>夜景が一番きれいなのは日没後30分〜1時間、周辺の街灯も点き始めるタイミング。混雑ピークは19〜20時で、ロープウェイ乗り場もこの時間帯が一番並ぶ。公式サイトのオンラインチケットを事前に買うと当日の待ち時間を短縮できる。</p>
+        <p>夏季(4月下旬〜11月上旬)は17〜22時、山頂へのマイカー乗り入れが規制される。この時間帯はロープウェイかタクシー利用が前提になる点、レンタカープランでは特に注意。</p>
+      </div>
+    </details>
+    <details>
+      <summary>レンタカーは二日目だけ借りる手も</summary>
+      <div class="inner">
+        <p>一日目は市街散策メインで駐車の手間がかさむので、市電・徒歩で回り、二日目の朝に市内の営業所でレンタカーを借りて大沼・トラピスト方面へ、そのまま空港で返却、という組み方も効率的。一日分の料金で行動半径を広げられる。</p>
+      </div>
+    </details>
+    <details>
+      <summary>季節と持ち物</summary>
+      <div class="inner">
+        <p>海沿いで風が強く、夏でも朝晩は20℃を切ることがある。<strong>羽織りものを一枚。</strong>5〜6月は「ガス」と呼ばれる海霧が発生しやすく、夜景が霞むこともあるので天気予報は前日までチェック。</p>
+        <p>冬季(12〜3月)は路面が凍結する。函館山の坂道・元町の石畳は特に滑りやすいので、防寒・防滑仕様の靴が必須。</p>
+      </div>
+    </details>
+  </section>
+
+  <footer>HAKODATE · HOKKAIDO · JAPAN</footer>
+</div>
+
+<script>
+(function(){
+  var state = { transport: "nocar" };
+  var names = {
+    "nocar": "PLAN 01 — 市電とバスで巡る一泊二日",
+    "car":   "PLAN 02 — 大沼・トラピストまで足を伸ばす一泊二日"
+  };
+
+  function render(){
+    var key = state.transport;
+    document.querySelectorAll(".panel").forEach(function(p){
+      p.classList.toggle("active", p.id === "panel-" + key);
+    });
+    document.getElementById("plan-name").textContent = names[key];
+  }
+
+  function bindAxis(id, prop){
+    var axis = document.getElementById(id);
+    axis.querySelectorAll("button").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        axis.querySelectorAll("button").forEach(function(b){
+          b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+        });
+        state[prop] = btn.dataset.value;
+        render();
+      });
+    });
+  }
+
+  bindAxis("axis-transport", "transport");
+})();
+</script>
+</body>
+</html>

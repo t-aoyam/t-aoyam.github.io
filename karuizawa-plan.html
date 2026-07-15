@@ -151,6 +151,24 @@
     white-space:nowrap;
   }
   .stop .node{position:relative}
+  .maplink{
+    color:inherit;
+    text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb, var(--brass) 55%, transparent);
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .maplink:hover,
+  .maplink:focus-visible{
+    color:var(--brass);
+    border-bottom-color:var(--brass);
+  }
+  .maplink::after{
+    content:"↗";
+    font-family:var(--font-mono);
+    font-size:.72em;
+    margin-left:.15em;
+    color:var(--brass);
+  }
   .stop .node::before{ /* line */
     content:"";
     position:absolute;
@@ -328,17 +346,17 @@
     <p class="plan-intro">東京8時台の新幹線で約1時間。バスの本数が限られるので、朝のうちに帰りまでの時刻をスクショしておくのがコツ。北側エリアはレンタサイクル(1日1,500円前後〜)も有力です。</p>
     <ol class="timeline">
       <li class="stop"><span class="time">9:30</span><span class="node"></span>
-        <div class="body"><h3>軽井沢駅 着</h3><p>北口からバス、またはレンタサイクルで旧軽方面へ。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E9%A7%85" target="_blank" rel="noopener">軽井沢駅</a> 着</h3><p>北口からバス、またはレンタサイクルで旧軽方面へ。</p></div></li>
       <li class="stop"><span class="time">10:00</span><span class="node"></span>
-        <div class="body"><h3>雲場池</h3><p>駅と旧軽の中間。一周20分の散策路で、朝は人が少なく写真日和。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%9B%B2%E5%A0%B4%E6%B1%A0" target="_blank" rel="noopener">雲場池</a></h3><p>駅と旧軽の中間。一周20分の散策路で、朝は人が少なく写真日和。</p></div></li>
       <li class="stop"><span class="time">10:45</span><span class="node"></span>
-        <div class="body"><h3>旧軽井沢銀座</h3><p>浅野屋のパン、ミカドコーヒーのモカソフトが定番。歩きながら万平ホテルのLINE順番待ちに登録しておく。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%97%A7%E8%BB%BD%E4%BA%95%E6%B2%A2%E9%8A%80%E5%BA%A7" target="_blank" rel="noopener">旧軽井沢銀座</a></h3><p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B5%85%E9%87%8E%E5%B1%8B%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">浅野屋</a>のパン、<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9F%E3%82%AB%E3%83%89%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">ミカドコーヒー</a>のモカソフトが定番。歩きながら<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%87%E5%B9%B3%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%AB%E3%83%95%E3%82%A7%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener">万平ホテル</a>のLINE順番待ちに登録しておく。</p></div></li>
       <li class="stop highlight"><span class="time">12:00</span><span class="node"></span>
-        <div class="body"><h3>万平ホテル カフェテラス<span class="tag">John Lennon</span></h3><p>聖パウロ教会に寄り道してから森の道を徒歩10分強。ランチ代わりにフレンチトースト＋アップルパイ＋ロイヤルミルクティー。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%87%E5%B9%B3%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%AB%E3%83%95%E3%82%A7%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener">万平ホテル カフェテラス</a><span class="tag">John Lennon</span></h3><p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%81%96%E3%83%91%E3%82%A6%E3%83%AD%E3%82%AB%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%95%99%E4%BC%9A%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">聖パウロ教会</a>に寄り道してから森の道を徒歩10分強。ランチ代わりにフレンチトースト＋アップルパイ＋ロイヤルミルクティー。</p></div></li>
       <li class="stop"><span class="time">13:30</span><span class="node"></span>
-        <div class="body"><h3>軽井沢タリアセン</h3><p>旧軽井沢バス停 or 駅北口4番乗り場からバスで「塩沢湖」下車すぐ。ペイネ美術館・睡鳩荘・湖のボートで2時間弱。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%82%BF%E3%83%AA%E3%82%A2%E3%82%BB%E3%83%B3" target="_blank" rel="noopener">軽井沢タリアセン</a></h3><p>旧軽井沢バス停 or 駅北口4番乗り場からバスで「塩沢湖」下車すぐ。<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9A%E3%82%A4%E3%83%8D%E7%BE%8E%E8%A1%93%E9%A4%A8%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">ペイネ美術館</a>・<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%9D%A1%E9%B3%A9%E8%8D%98%20%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%82%BF%E3%83%AA%E3%82%A2%E3%82%BB%E3%83%B3" target="_blank" rel="noopener">睡鳩荘</a>・湖のボートで2時間弱。</p></div></li>
       <li class="stop"><span class="time">15:45</span><span class="node"></span>
-        <div class="body"><h3>プリンスショッピングプラザ</h3><p>バスで駅へ戻り、南口直結のアウトレットで買い物。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%83%BB%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%82%B7%E3%83%A7%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%83%97%E3%83%A9%E3%82%B6" target="_blank" rel="noopener">プリンスショッピングプラザ</a></h3><p>バスで駅へ戻り、南口直結のアウトレットで買い物。</p></div></li>
       <li class="stop"><span class="time">18:30</span><span class="node"></span>
         <div class="body"><h3>新幹線で帰京</h3><p>詰め込み気味なので、タリアセンかアウトレットのどちらかを軽めにする覚悟で。</p></div></li>
     </ol>
@@ -349,15 +367,15 @@
     <p class="plan-intro">都内から関越→上信越道で休憩込み2〜3時間。碓氷軽井沢ICに近い南側(タリアセン)から北上するのが渋滞回避の定石。混雑日の帰りは佐久IC経由で逃げる手も。</p>
     <ol class="timeline">
       <li class="stop"><span class="time">9:30</span><span class="node"></span>
-        <div class="body"><h3>軽井沢タリアセン</h3><p>開園直後に到着(ICから車で約15分・駐車場500円)。塩沢湖畔を2時間ほど。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%82%BF%E3%83%AA%E3%82%A2%E3%82%BB%E3%83%B3" target="_blank" rel="noopener">軽井沢タリアセン</a></h3><p>開園直後に到着(ICから車で約15分・駐車場500円)。塩沢湖畔を2時間ほど。</p></div></li>
       <li class="stop"><span class="time">12:00</span><span class="node"></span>
-        <div class="body"><h3>ハルニレテラス</h3><p>車で15分。川沿いのウッドデッキでランチ。村民食堂や沢村ベーカリーが人気。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%8F%E3%83%AB%E3%83%8B%E3%83%AC%E3%83%86%E3%83%A9%E3%82%B9%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">ハルニレテラス</a></h3><p>車で15分。川沿いのウッドデッキでランチ。<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%91%E6%B0%91%E9%A3%9F%E5%A0%82%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">村民食堂</a>や<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E6%B2%A2%E6%9D%91%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">沢村ベーカリー</a>が人気。</p></div></li>
       <li class="stop highlight"><span class="time">14:00</span><span class="node"></span>
-        <div class="body"><h3>万平ホテル カフェテラス<span class="tag">John Lennon</span></h3><p>駐車場あり。ピーク時間帯なので、移動中にLINEの順番待ち登録を。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%87%E5%B9%B3%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%AB%E3%83%95%E3%82%A7%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener">万平ホテル カフェテラス</a><span class="tag">John Lennon</span></h3><p>駐車場あり。ピーク時間帯なので、移動中にLINEの順番待ち登録を。</p></div></li>
       <li class="stop"><span class="time">15:00</span><span class="node"></span>
-        <div class="body"><h3>旧軽井沢銀座</h3><p>旧軽ロータリー周辺の有料駐車場に停めて散策。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%97%A7%E8%BB%BD%E4%BA%95%E6%B2%A2%E9%8A%80%E5%BA%A7" target="_blank" rel="noopener">旧軽井沢銀座</a></h3><p>旧軽ロータリー周辺の有料駐車場に停めて散策。</p></div></li>
       <li class="stop"><span class="time">16:30</span><span class="node"></span>
-        <div class="body"><h3>プリンスショッピングプラザ</h3><p>夕方は駐車場も入りやすい。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%83%BB%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%82%B7%E3%83%A7%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%83%97%E3%83%A9%E3%82%B6" target="_blank" rel="noopener">プリンスショッピングプラザ</a></h3><p>夕方は駐車場も入りやすい。</p></div></li>
       <li class="stop"><span class="time">18:00</span><span class="node"></span>
         <div class="body"><h3>出発</h3><p>三連休などは碓氷軽井沢IC周辺が夕方渋滞。早め離脱が吉。</p></div></li>
     </ol>
@@ -365,24 +383,24 @@
 
   <!-- ============ ③ 一泊 × 車なし ============ -->
   <section class="panel" id="panel-stay-nocar">
-    <p class="plan-intro">せっかくなら万平ホテル泊が最高の選択。ジョン・レノンが家族と滞在したのはアルプス館128号室で、ロビー奥には彼が弾いたピアノが残る資料館も。予算を抑えるなら旧軽エリアや駅前の宿でも動線は同じです。</p>
+    <p class="plan-intro">せっかくなら<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%87%E5%B9%B3%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%AB%E3%83%95%E3%82%A7%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener">万平ホテル</a>泊が最高の選択。ジョン・レノンが家族と滞在したのはアルプス館128号室で、ロビー奥には彼が弾いたピアノが残る資料館も。予算を抑えるなら旧軽エリアや駅前の宿でも動線は同じです。</p>
     <h2 class="day-label">一日目 ─ 北側エリア</h2>
     <ol class="timeline">
       <li class="stop"><span class="time">11:30</span><span class="node"></span>
-        <div class="body"><h3>軽井沢駅 着 → 荷物を宿へ</h3><p>万平ホテルなら「旧軽井沢」バス停から徒歩11分。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E9%A7%85" target="_blank" rel="noopener">軽井沢駅</a> 着 → 荷物を宿へ</h3><p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%87%E5%B9%B3%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%AB%E3%83%95%E3%82%A7%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener">万平ホテル</a>なら「旧軽井沢」バス停から徒歩11分。</p></div></li>
       <li class="stop"><span class="time">12:30</span><span class="node"></span>
-        <div class="body"><h3>雲場池 → 旧軽井沢銀座</h3><p>食べ歩きしつつ聖パウロカトリック教会へ寄り道。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%9B%B2%E5%A0%B4%E6%B1%A0" target="_blank" rel="noopener">雲場池</a> → <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%97%A7%E8%BB%BD%E4%BA%95%E6%B2%A2%E9%8A%80%E5%BA%A7" target="_blank" rel="noopener">旧軽井沢銀座</a></h3><p>食べ歩きしつつ<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%81%96%E3%83%91%E3%82%A6%E3%83%AD%E3%82%AB%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%95%99%E4%BC%9A%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">聖パウロカトリック教会</a>へ寄り道。</p></div></li>
       <li class="stop highlight"><span class="time">15:30</span><span class="node"></span>
-        <div class="body"><h3>チェックイン → カフェテラス<span class="tag">John Lennon</span></h3><p>夕方の空いてきた時間にゆっくりアップルパイとロイヤルミルクティー。</p></div></li>
+        <div class="body"><h3>チェックイン → <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%87%E5%B9%B3%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%AB%E3%83%95%E3%82%A7%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener">カフェテラス</a><span class="tag">John Lennon</span></h3><p>夕方の空いてきた時間にゆっくりアップルパイとロイヤルミルクティー。</p></div></li>
       <li class="stop"><span class="time">18:30</span><span class="node"></span>
-        <div class="body"><h3>ディナー</h3><p>万平のメインダイニングでフレンチ、または旧軽の川上庵(蕎麦)など。重厚なホテルバーで一杯締めるのも◎。</p></div></li>
+        <div class="body"><h3>ディナー</h3><p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%87%E5%B9%B3%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%AB%E3%83%95%E3%82%A7%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener">万平</a>のメインダイニングでフレンチ、または旧軽の<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B7%9D%E4%B8%8A%E5%BA%B5%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">川上庵</a>(蕎麦)など。重厚なホテルバーで一杯締めるのも◎。</p></div></li>
     </ol>
     <h2 class="day-label">二日目 ─ 南側＋買い物</h2>
     <ol class="timeline">
       <li class="stop"><span class="time">9:00</span><span class="node"></span>
-        <div class="body"><h3>軽井沢タリアセン</h3><p>朝食後、バスで開園に合わせて。午前の湖畔は静かで気持ちいい。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%82%BF%E3%83%AA%E3%82%A2%E3%82%BB%E3%83%B3" target="_blank" rel="noopener">軽井沢タリアセン</a></h3><p>朝食後、バスで開園に合わせて。午前の湖畔は静かで気持ちいい。</p></div></li>
       <li class="stop"><span class="time">13:00</span><span class="node"></span>
-        <div class="body"><h3>プリンスショッピングプラザ</h3><p>荷物が増えるので買い物は最終日の最後が鉄則。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%83%BB%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%82%B7%E3%83%A7%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%83%97%E3%83%A9%E3%82%B6" target="_blank" rel="noopener">プリンスショッピングプラザ</a></h3><p>荷物が増えるので買い物は最終日の最後が鉄則。</p></div></li>
       <li class="stop"><span class="time">17:00</span><span class="node"></span>
         <div class="body"><h3>新幹線で帰京</h3><p>お土産は駅構内でも補完できる。</p></div></li>
     </ol>
@@ -390,26 +408,26 @@
 
   <!-- ============ ④ 一泊 × 車あり ============ -->
   <section class="panel" id="panel-stay-car">
-    <p class="plan-intro">車があると行動半径が北へ大きく広がる二日間。宿は中軽井沢の温泉付き(トンボの湯周辺)や御代田・追分方面のリーズナブルな選択肢も視野に。</p>
+    <p class="plan-intro">車があると行動半径が北へ大きく広がる二日間。宿は中軽井沢の温泉付き(<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%A8%E3%82%93%E3%81%BC%E3%81%AE%E6%B9%AF%20%E6%98%9F%E9%87%8E%E6%B8%A9%E6%B3%89" target="_blank" rel="noopener">トンボの湯</a>周辺)や御代田・追分方面のリーズナブルな選択肢も視野に。</p>
     <h2 class="day-label">一日目 ─ 南から北へ</h2>
     <ol class="timeline">
       <li class="stop"><span class="time">9:30</span><span class="node"></span>
-        <div class="body"><h3>軽井沢タリアセン</h3><p>碓氷軽井沢ICから約15分。午前中に湖畔と美術館を。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%82%BF%E3%83%AA%E3%82%A2%E3%82%BB%E3%83%B3" target="_blank" rel="noopener">軽井沢タリアセン</a></h3><p>碓氷軽井沢ICから約15分。午前中に湖畔と美術館を。</p></div></li>
       <li class="stop"><span class="time">12:00</span><span class="node"></span>
-        <div class="body"><h3>ハルニレテラス</h3><p>星野エリアでランチ。川沿いのデッキ席が気持ちいい。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%8F%E3%83%AB%E3%83%8B%E3%83%AC%E3%83%86%E3%83%A9%E3%82%B9%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">ハルニレテラス</a></h3><p>星野エリアでランチ。川沿いのデッキ席が気持ちいい。</p></div></li>
       <li class="stop"><span class="time">14:00</span><span class="node"></span>
-        <div class="body"><h3>白糸の滝</h3><p>車で15分北上。幅70mの水のカーテン。地下水由来なので雨後でも濁らない。余力があれば旧碓氷峠の見晴台で夕景も。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%99%BD%E7%B3%B8%E3%81%AE%E6%BB%9D%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">白糸の滝</a></h3><p>車で15分北上。幅70mの水のカーテン。地下水由来なので雨後でも濁らない。余力があれば<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%97%A7%E7%A2%93%E6%B0%B7%E5%B3%A0%E8%A6%8B%E6%99%B4%E5%8F%B0" target="_blank" rel="noopener">旧碓氷峠の見晴台</a>で夕景も。</p></div></li>
       <li class="stop"><span class="time">17:00</span><span class="node"></span>
-        <div class="body"><h3>宿へ</h3><p>中軽井沢の温泉宿ならトンボの湯で汗を流してから夕食。</p></div></li>
+        <div class="body"><h3>宿へ</h3><p>中軽井沢の温泉宿なら<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%A8%E3%82%93%E3%81%BC%E3%81%AE%E6%B9%AF%20%E6%98%9F%E9%87%8E%E6%B8%A9%E6%B3%89" target="_blank" rel="noopener">トンボの湯</a>で汗を流してから夕食。</p></div></li>
     </ol>
     <h2 class="day-label">二日目 ─ 定番を仕上げる</h2>
     <ol class="timeline">
       <li class="stop"><span class="time">8:30</span><span class="node"></span>
-        <div class="body"><h3>雲場池</h3><p>朝の光がいちばんきれいな時間。近くのコインパーキングへ。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%9B%B2%E5%A0%B4%E6%B1%A0" target="_blank" rel="noopener">雲場池</a></h3><p>朝の光がいちばんきれいな時間。近くのコインパーキングへ。</p></div></li>
       <li class="stop highlight"><span class="time">10:00</span><span class="node"></span>
-        <div class="body"><h3>旧軽銀座 → 万平カフェテラス<span class="tag">John Lennon</span></h3><p>カフェは午前中に入るのがベスト。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%97%A7%E8%BB%BD%E4%BA%95%E6%B2%A2%E9%8A%80%E5%BA%A7" target="_blank" rel="noopener">旧軽銀座</a> → <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%87%E5%B9%B3%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%AB%E3%83%95%E3%82%A7%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener">万平カフェテラス</a><span class="tag">John Lennon</span></h3><p>カフェは午前中に入るのがベスト。</p></div></li>
       <li class="stop"><span class="time">13:00</span><span class="node"></span>
-        <div class="body"><h3>プリンスショッピングプラザ</h3><p>買い物はここでまとめて。</p></div></li>
+        <div class="body"><h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%83%BB%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%82%B7%E3%83%A7%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%83%97%E3%83%A9%E3%82%B6" target="_blank" rel="noopener">プリンスショッピングプラザ</a></h3><p>買い物はここでまとめて。</p></div></li>
       <li class="stop"><span class="time">15:30</span><span class="node"></span>
         <div class="body"><h3>出発</h3><p>渋滞が本格化する前(15〜16時)に高速へ。</p></div></li>
     </ol>
@@ -422,29 +440,29 @@
     <p class="sub-label">LUNCH</p>
     <div class="grid">
       <div class="card">
-        <h3>川上庵 本店</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B7%9D%E4%B8%8A%E5%BA%B5%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">川上庵 本店</a></h3>
         <span class="meta">旧軽ロータリー · 蕎麦</span>
         <p>鴨せいろと天ぷらが看板の王道。通し営業22時までで旅程が読みやすい。ピークは行列必至、11時台に。</p>
       </div>
       <div class="card">
-        <h3>酢重正之</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%85%A2%E9%87%8D%E6%AD%A3%E4%B9%8B%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">酢重正之</a></h3>
         <span class="meta">旧軽ロータリー · 信州味噌の和食</span>
-        <p>焼き魚や山賊焼きの定食が丁寧。川上庵が大行列のときの避難先としても優秀。</p>
+        <p>焼き魚や山賊焼きの定食が丁寧。<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B7%9D%E4%B8%8A%E5%BA%B5%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">川上庵</a>が大行列のときの避難先としても優秀。</p>
       </div>
       <div class="card">
-        <h3>かぎもとや 中軽井沢本店</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%8B%E3%81%8E%E3%82%82%E3%81%A8%E3%82%84%20%E4%B8%AD%E8%BB%BD%E4%BA%95%E6%B2%A2%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">かぎもとや 中軽井沢本店</a></h3>
         <span class="meta">中軽井沢駅前 · 蕎麦</span>
-        <p>明治創業の老舗手打ち蕎麦。観光地価格控えめで、ハルニレテラス・タリアセンとの動線上。</p>
+        <p>明治創業の老舗手打ち蕎麦。観光地価格控えめで、<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%8F%E3%83%AB%E3%83%8B%E3%83%AC%E3%83%86%E3%83%A9%E3%82%B9%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">ハルニレテラス</a>・<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%82%BF%E3%83%AA%E3%82%A2%E3%82%BB%E3%83%B3" target="_blank" rel="noopener">タリアセン</a>との動線上。</p>
         <span class="fit">車プラン向き</span>
       </div>
       <div class="card">
-        <h3>村民食堂</h3>
-        <span class="meta">ハルニレテラス隣 · 信州料理</span>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%91%E6%B0%91%E9%A3%9F%E5%A0%82%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">村民食堂</a></h3>
+        <span class="meta"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%8F%E3%83%AB%E3%83%8B%E3%83%AC%E3%83%86%E3%83%A9%E3%82%B9%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">ハルニレテラス</a>隣 · 信州料理</span>
         <p>山賊焼きや季節の定食。星野エリアに行く日のランチはここが便利。</p>
         <span class="fit">車プラン向き</span>
       </div>
       <div class="card">
-        <h3>エロイーズカフェ</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A8%E3%83%AD%E3%82%A4%E3%83%BC%E3%82%BA%E3%82%AB%E3%83%95%E3%82%A7%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">エロイーズカフェ</a></h3>
         <span class="meta">南ヶ丘 · 朝食・ブランチ</span>
         <p>エッグベネディクトとフレンチトーストの有名店。予約制なので事前に押さえる前提で。</p>
       </div>
@@ -453,19 +471,19 @@
     <p class="sub-label">DINNER</p>
     <div class="grid">
       <div class="card">
-        <h3>ピレネー</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%94%E3%83%AC%E3%83%8D%E3%83%BC%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">ピレネー</a></h3>
         <span class="meta">軽井沢本通り · 薪火グリル</span>
         <p>店の中央の薪火でローストする肉料理。Tボーンや丸鶏＋前菜ビュッフェ。旅の「ごちそう枠」に。要予約・木曜定休。</p>
       </div>
       <div class="card">
-        <h3>川上庵／酢重正之</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B7%9D%E4%B8%8A%E5%BA%B5%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">川上庵</a>／<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%85%A2%E9%87%8D%E6%AD%A3%E4%B9%8B%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">酢重正之</a></h3>
         <span class="meta">旧軽ロータリー · 〜22:00</span>
-        <p>夜は蕎麦前＋日本酒でゆっくり。夜の川上庵は昼より並ばない。閉店の早い軽井沢で22時営業は貴重。</p>
+        <p>夜は蕎麦前＋日本酒でゆっくり。夜の<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B7%9D%E4%B8%8A%E5%BA%B5%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">川上庵</a>は昼より並ばない。閉店の早い軽井沢で22時営業は貴重。</p>
       </div>
       <div class="card">
-        <h3>村民食堂</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%91%E6%B0%91%E9%A3%9F%E5%A0%82%20%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">村民食堂</a></h3>
         <span class="meta">星野エリア · 〜21:00</span>
-        <p>トンボの湯で温泉→夕食のコンボが最高。一泊プランの夜に。</p>
+        <p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%A8%E3%82%93%E3%81%BC%E3%81%AE%E6%B9%AF%20%E6%98%9F%E9%87%8E%E6%B8%A9%E6%B3%89" target="_blank" rel="noopener">トンボの湯</a>で温泉→夕食のコンボが最高。一泊プランの夜に。</p>
         <span class="fit">一泊×車プラン向き</span>
       </div>
     </div>
@@ -476,24 +494,24 @@
     <h2 class="notes-title">宿</h2>
     <div class="grid">
       <div class="card">
-        <h3>旧軽井沢ホテル音羽ノ森</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%97%A7%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%83%9B%E3%83%86%E3%83%AB%E9%9F%B3%E7%BE%BD%E3%83%8E%E6%A3%AE" target="_blank" rel="noopener">旧軽井沢ホテル音羽ノ森</a></h3>
         <span class="meta">旧軽井沢 · クラシック洋館</span>
-        <p>万平に泊まれないならここが一番「軽井沢らしい」代替。旧軽銀座・万平カフェまで徒歩圏。</p>
+        <p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%87%E5%B9%B3%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%AB%E3%83%95%E3%82%A7%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener">万平</a>に泊まれないならここが一番「軽井沢らしい」代替。<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%97%A7%E8%BB%BD%E4%BA%95%E6%B2%A2%E9%8A%80%E5%BA%A7" target="_blank" rel="noopener">旧軽銀座</a>・<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%87%E5%B9%B3%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%AB%E3%83%95%E3%82%A7%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener">万平カフェ</a>まで徒歩圏。</p>
         <span class="fit">車なしプランと好相性</span>
       </div>
       <div class="card">
-        <h3>軽井沢プリンスホテル イースト</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%A4%E3%83%BC%E3%82%B9%E3%83%88" target="_blank" rel="noopener">軽井沢プリンスホテル イースト</a></h3>
         <span class="meta">駅南側 · リゾート</span>
-        <p>アウトレット隣接＋温泉大浴場。立地の便利さは町内最強で、車なし一泊の実務的な正解。</p>
+        <p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%83%BB%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%82%B7%E3%83%A7%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%83%97%E3%83%A9%E3%82%B6" target="_blank" rel="noopener">アウトレット</a>隣接＋温泉大浴場。立地の便利さは町内最強で、車なし一泊の実務的な正解。</p>
         <span class="fit">車なしプランと好相性</span>
       </div>
       <div class="card">
-        <h3>ホテルインディゴ軽井沢</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9B%E3%83%86%E3%83%AB%E3%82%A4%E3%83%B3%E3%83%87%E3%82%A3%E3%82%B4%E8%BB%BD%E4%BA%95%E6%B2%A2" target="_blank" rel="noopener">ホテルインディゴ軽井沢</a></h3>
         <span class="meta">塩沢 · デザインホテル</span>
-        <p>タリアセンのすぐ近く。大浴場＋サウナ、駅シャトルあり。評判の良さは頭ひとつ抜けている。</p>
+        <p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%82%BF%E3%83%AA%E3%82%A2%E3%82%BB%E3%83%B3" target="_blank" rel="noopener">タリアセン</a>のすぐ近く。大浴場＋サウナ、駅シャトルあり。評判の良さは頭ひとつ抜けている。</p>
       </div>
       <div class="card">
-        <h3>軽井沢マリオット</h3>
+        <h3><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%83%9E%E3%83%AA%E3%82%AA%E3%83%83%E3%83%88%E3%83%9B%E3%83%86%E3%83%AB" target="_blank" rel="noopener">軽井沢マリオット</a></h3>
         <span class="meta">中軽井沢の奥 · 温泉リゾート</span>
         <p>静かな森の中で、客室露天風呂付きの部屋も。駅から遠いので車前提。</p>
         <span class="fit">車プラン専用</span>
@@ -515,7 +533,7 @@
     <details>
       <summary>万平ホテル カフェテラス攻略</summary>
       <div class="inner">
-        <p>営業9:30〜18:00、<strong>席の予約は不可</strong>。13〜17時のピークは入店待ちになりがち。LINE友達登録でホテル3km圏内から順番待ち登録ができるので、旧軽銀座を歩きながら登録しておくのが賢い。</p>
+        <p>営業9:30〜18:00、<strong>席の予約は不可</strong>。13〜17時のピークは入店待ちになりがち。LINE友達登録でホテル3km圏内から順番待ち登録ができるので、<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%97%A7%E8%BB%BD%E4%BA%95%E6%B2%A2%E9%8A%80%E5%BA%A7" target="_blank" rel="noopener">旧軽銀座</a>を歩きながら登録しておくのが賢い。</p>
         <p>ジョン・レノンは1976〜79年に毎夏滞在。彼がレシピを教えたロイヤルミルクティーと、信州産紅玉のアップルパイが定番。</p>
       </div>
     </details>
@@ -523,7 +541,7 @@
       <summary>季節と持ち物</summary>
       <div class="inner">
         <p>7月中旬〜はハイシーズン。週末の旧軽銀座とアウトレットはかなり混むので、日程が選べるなら平日が快適。</p>
-        <p>標高約1,000mで夏でも朝晩は20℃を切ることがある。<strong>羽織りものを一枚。</strong>カメラ派なら雲場池の朝、万平ホテルの内装(赤絨毯とステンドグラス)、タリアセンの睡鳩荘が鉄板の被写体。</p>
+        <p>標高約1,000mで夏でも朝晩は20℃を切ることがある。<strong>羽織りものを一枚。</strong>カメラ派なら<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%9B%B2%E5%A0%B4%E6%B1%A0" target="_blank" rel="noopener">雲場池</a>の朝、<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B8%87%E5%B9%B3%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%AB%E3%83%95%E3%82%A7%E3%83%86%E3%83%A9%E3%82%B9" target="_blank" rel="noopener">万平ホテル</a>の内装(赤絨毯とステンドグラス)、<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%82%BF%E3%83%AA%E3%82%A2%E3%82%BB%E3%83%B3" target="_blank" rel="noopener">タリアセン</a>の<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%9D%A1%E9%B3%A9%E8%8D%98%20%E8%BB%BD%E4%BA%95%E6%B2%A2%E3%82%BF%E3%83%AA%E3%82%A2%E3%82%BB%E3%83%B3" target="_blank" rel="noopener">睡鳩荘</a>が鉄板の被写体。</p>
       </div>
     </details>
   </section>
