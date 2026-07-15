@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>軽井沢 観光プラン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#1e3a2f;
+    --ink:#26332c;
+    --moss:#5d7a63;
+    --brass:#a5813c;
+    --paper:#f3f5ef;
+    --card:#fbfcf9;
+    --mist:#dfe5db;
+    --font-display:"Shippori Mincho", serif;
+    --font-body:"Zen Kaku Gothic New", sans-serif;
+    --font-mono:"IBM Plex Mono", monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font-body);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 96px}
+
+  /* ---------- header ---------- */
+  header{padding:72px 0 40px;text-align:center}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:.72rem;
+    letter-spacing:.32em;
+    color:var(--moss);
+    text-transform:uppercase;
+  }
+  h1{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(2.2rem,6vw,3.1rem);
+    letter-spacing:.18em;
+    color:var(--forest);
+    margin:.35em 0 .3em;
+  }
+  .lede{font-size:.92rem;color:var(--moss);max-width:34em;margin:0 auto}
+
+  /* ---------- 2-axis selector ---------- */
+  .selector{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    justify-content:center;
+    margin:36px 0 12px;
+  }
+  .axis{
+    display:flex;
+    background:var(--card);
+    border:1px solid var(--mist);
+    border-radius:999px;
+    padding:4px;
+    position:relative;
+  }
+  .axis button{
+    appearance:none;
+    border:0;
+    background:transparent;
+    font-family:var(--font-body);
+    font-size:.95rem;
+    font-weight:500;
+    color:var(--moss);
+    padding:9px 26px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:color .25s ease, background-color .25s ease;
+  }
+  .axis button[aria-pressed="true"]{
+    background:var(--forest);
+    color:#f5f2e8;
+  }
+  .axis button:focus-visible{
+    outline:2px solid var(--brass);
+    outline-offset:2px;
+  }
+  .plan-name{
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:.75rem;
+    letter-spacing:.22em;
+    color:var(--brass);
+    margin-bottom:40px;
+    min-height:1.4em;
+  }
+
+  /* ---------- plan panels ---------- */
+  .panel{display:none;animation:rise .45s ease both}
+  .panel.active{display:block}
+  @keyframes rise{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .panel{animation:none}
+    html{scroll-behavior:auto}
+  }
+
+  .plan-intro{
+    background:var(--card);
+    border:1px solid var(--mist);
+    border-left:3px solid var(--brass);
+    border-radius:0 10px 10px 0;
+    padding:18px 22px;
+    font-size:.92rem;
+    margin-bottom:44px;
+  }
+
+  .day-label{
+    font-family:var(--font-display);
+    font-size:1.15rem;
+    font-weight:600;
+    letter-spacing:.14em;
+    color:var(--forest);
+    margin:48px 0 24px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .day-label::after{content:"";flex:1;height:1px;background:var(--mist)}
+  .day-label:first-of-type{margin-top:0}
+
+  /* timeline */
+  .timeline{list-style:none;position:relative;padding-left:0}
+  .stop{
+    display:grid;
+    grid-template-columns:74px 20px 1fr;
+    gap:0 14px;
+    position:relative;
+  }
+  .stop .time{
+    font-family:var(--font-mono);
+    font-size:.8rem;
+    color:var(--moss);
+    text-align:right;
+    padding-top:3px;
+    white-space:nowrap;
+  }
+  .stop .node{position:relative}
+  .stop .node::before{ /* line */
+    content:"";
+    position:absolute;
+    left:50%;top:12px;bottom:-12px;
+    width:1px;
+    background:var(--mist);
+    transform:translateX(-50%);
+  }
+  .stop:last-child .node::before{display:none}
+  .stop .node::after{ /* dot */
+    content:"";
+    position:absolute;
+    left:50%;top:8px;
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--moss);
+    transform:translateX(-50%);
+  }
+  .stop.highlight .node::after{background:var(--brass);border-color:var(--brass)}
+  .stop .body{padding-bottom:34px}
+  .stop h3{
+    font-family:var(--font-display);
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--forest);
+    letter-spacing:.04em;
+  }
+  .stop p{font-size:.9rem;margin-top:4px}
+  .tag{
+    display:inline-block;
+    font-family:var(--font-mono);
+    font-size:.68rem;
+    letter-spacing:.08em;
+    color:var(--brass);
+    border:1px solid color-mix(in srgb, var(--brass) 45%, transparent);
+    border-radius:4px;
+    padding:1px 8px;
+    margin-left:8px;
+    vertical-align:2px;
+    white-space:nowrap;
+  }
+
+  /* ---------- common notes ---------- */
+  .notes{margin-top:72px}
+  .notes-title{
+    font-family:var(--font-display);
+    font-size:1.3rem;
+    font-weight:600;
+    letter-spacing:.14em;
+    color:var(--forest);
+    text-align:center;
+    margin-bottom:28px;
+  }
+  details{
+    background:var(--card);
+    border:1px solid var(--mist);
+    border-radius:10px;
+    margin-bottom:12px;
+    overflow:hidden;
+  }
+  summary{
+    cursor:pointer;
+    padding:15px 20px;
+    font-weight:700;
+    font-size:.93rem;
+    color:var(--forest);
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"＋";
+    font-family:var(--font-mono);
+    color:var(--brass);
+    transition:transform .25s ease;
+  }
+  details[open] summary::after{transform:rotate(45deg)}
+  details .inner{padding:0 20px 18px;font-size:.88rem}
+  details .inner p+p{margin-top:.7em}
+  strong{color:var(--forest)}
+
+  /* ---------- food & stay cards ---------- */
+  .section-block{margin-top:72px}
+  .sub-label{
+    font-family:var(--font-mono);
+    font-size:.72rem;
+    letter-spacing:.28em;
+    color:var(--brass);
+    text-align:center;
+    margin:32px 0 16px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:12px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--mist);
+    border-radius:10px;
+    padding:16px 18px 14px;
+  }
+  .card h3{
+    font-family:var(--font-display);
+    font-size:1rem;
+    font-weight:600;
+    color:var(--forest);
+    letter-spacing:.03em;
+  }
+  .card .meta{
+    font-family:var(--font-mono);
+    font-size:.68rem;
+    letter-spacing:.1em;
+    color:var(--moss);
+    display:block;
+    margin:2px 0 8px;
+  }
+  .card p{font-size:.84rem;line-height:1.7}
+  .card .fit{
+    display:inline-block;
+    margin-top:10px;
+    font-size:.72rem;
+    font-weight:700;
+    color:var(--brass);
+  }
+  .price-note{
+    text-align:center;
+    font-size:.8rem;
+    color:var(--moss);
+    margin-top:20px;
+  }
+
+  footer{
+    margin-top:80px;
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:.68rem;
+    letter-spacing:.2em;
+    color:var(--moss);
+  }
+
+  @media (max-width:520px){
+    .stop{grid-template-columns:58px 16px 1fr;gap:0 10px}
+    .stop .time{font-size:.72rem}
+    .axis button{padding:8px 18px;font-size:.88rem}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Karuizawa Travel Notes</p>
+    <h1>軽井沢</h1>
+    <p class="lede">高原の緑、クラシックホテル、湖畔の美術館。<br>日程とアシに合わせてプランを切り替えてください。</p>
+  </header>
+
+  <div class="selector" role="group" aria-label="プラン選択">
+    <div class="axis" id="axis-duration">
+      <button type="button" data-value="day" aria-pressed="true">日帰り</button>
+      <button type="button" data-value="stay" aria-pressed="false">一泊二日</button>
+    </div>
+    <div class="axis" id="axis-transport">
+      <button type="button" data-value="nocar" aria-pressed="true">車なし</button>
+      <button type="button" data-value="car" aria-pressed="false">車あり</button>
+    </div>
+  </div>
+  <p class="plan-name" id="plan-name" aria-live="polite">PLAN 01 — 新幹線とバスで巡る一日</p>
+
+  <!-- ============ ① 日帰り × 車なし ============ -->
+  <section class="panel active" id="panel-day-nocar">
+    <p class="plan-intro">東京8時台の新幹線で約1時間。バスの本数が限られるので、朝のうちに帰りまでの時刻をスクショしておくのがコツ。北側エリアはレンタサイクル(1日1,500円前後〜)も有力です。</p>
+    <ol class="timeline">
+      <li class="stop"><span class="time">9:30</span><span class="node"></span>
+        <div class="body"><h3>軽井沢駅 着</h3><p>北口からバス、またはレンタサイクルで旧軽方面へ。</p></div></li>
+      <li class="stop"><span class="time">10:00</span><span class="node"></span>
+        <div class="body"><h3>雲場池</h3><p>駅と旧軽の中間。一周20分の散策路で、朝は人が少なく写真日和。</p></div></li>
+      <li class="stop"><span class="time">10:45</span><span class="node"></span>
+        <div class="body"><h3>旧軽井沢銀座</h3><p>浅野屋のパン、ミカドコーヒーのモカソフトが定番。歩きながら万平ホテルのLINE順番待ちに登録しておく。</p></div></li>
+      <li class="stop highlight"><span class="time">12:00</span><span class="node"></span>
+        <div class="body"><h3>万平ホテル カフェテラス<span class="tag">John Lennon</span></h3><p>聖パウロ教会に寄り道してから森の道を徒歩10分強。ランチ代わりにフレンチトースト＋アップルパイ＋ロイヤルミルクティー。</p></div></li>
+      <li class="stop"><span class="time">13:30</span><span class="node"></span>
+        <div class="body"><h3>軽井沢タリアセン</h3><p>旧軽井沢バス停 or 駅北口4番乗り場からバスで「塩沢湖」下車すぐ。ペイネ美術館・睡鳩荘・湖のボートで2時間弱。</p></div></li>
+      <li class="stop"><span class="time">15:45</span><span class="node"></span>
+        <div class="body"><h3>プリンスショッピングプラザ</h3><p>バスで駅へ戻り、南口直結のアウトレットで買い物。</p></div></li>
+      <li class="stop"><span class="time">18:30</span><span class="node"></span>
+        <div class="body"><h3>新幹線で帰京</h3><p>詰め込み気味なので、タリアセンかアウトレットのどちらかを軽めにする覚悟で。</p></div></li>
+    </ol>
+  </section>
+
+  <!-- ============ ② 日帰り × 車あり ============ -->
+  <section class="panel" id="panel-day-car">
+    <p class="plan-intro">都内から関越→上信越道で休憩込み2〜3時間。碓氷軽井沢ICに近い南側(タリアセン)から北上するのが渋滞回避の定石。混雑日の帰りは佐久IC経由で逃げる手も。</p>
+    <ol class="timeline">
+      <li class="stop"><span class="time">9:30</span><span class="node"></span>
+        <div class="body"><h3>軽井沢タリアセン</h3><p>開園直後に到着(ICから車で約15分・駐車場500円)。塩沢湖畔を2時間ほど。</p></div></li>
+      <li class="stop"><span class="time">12:00</span><span class="node"></span>
+        <div class="body"><h3>ハルニレテラス</h3><p>車で15分。川沿いのウッドデッキでランチ。村民食堂や沢村ベーカリーが人気。</p></div></li>
+      <li class="stop highlight"><span class="time">14:00</span><span class="node"></span>
+        <div class="body"><h3>万平ホテル カフェテラス<span class="tag">John Lennon</span></h3><p>駐車場あり。ピーク時間帯なので、移動中にLINEの順番待ち登録を。</p></div></li>
+      <li class="stop"><span class="time">15:00</span><span class="node"></span>
+        <div class="body"><h3>旧軽井沢銀座</h3><p>旧軽ロータリー周辺の有料駐車場に停めて散策。</p></div></li>
+      <li class="stop"><span class="time">16:30</span><span class="node"></span>
+        <div class="body"><h3>プリンスショッピングプラザ</h3><p>夕方は駐車場も入りやすい。</p></div></li>
+      <li class="stop"><span class="time">18:00</span><span class="node"></span>
+        <div class="body"><h3>出発</h3><p>三連休などは碓氷軽井沢IC周辺が夕方渋滞。早め離脱が吉。</p></div></li>
+    </ol>
+  </section>
+
+  <!-- ============ ③ 一泊 × 車なし ============ -->
+  <section class="panel" id="panel-stay-nocar">
+    <p class="plan-intro">せっかくなら万平ホテル泊が最高の選択。ジョン・レノンが家族と滞在したのはアルプス館128号室で、ロビー奥には彼が弾いたピアノが残る資料館も。予算を抑えるなら旧軽エリアや駅前の宿でも動線は同じです。</p>
+    <h2 class="day-label">一日目 ─ 北側エリア</h2>
+    <ol class="timeline">
+      <li class="stop"><span class="time">11:30</span><span class="node"></span>
+        <div class="body"><h3>軽井沢駅 着 → 荷物を宿へ</h3><p>万平ホテルなら「旧軽井沢」バス停から徒歩11分。</p></div></li>
+      <li class="stop"><span class="time">12:30</span><span class="node"></span>
+        <div class="body"><h3>雲場池 → 旧軽井沢銀座</h3><p>食べ歩きしつつ聖パウロカトリック教会へ寄り道。</p></div></li>
+      <li class="stop highlight"><span class="time">15:30</span><span class="node"></span>
+        <div class="body"><h3>チェックイン → カフェテラス<span class="tag">John Lennon</span></h3><p>夕方の空いてきた時間にゆっくりアップルパイとロイヤルミルクティー。</p></div></li>
+      <li class="stop"><span class="time">18:30</span><span class="node"></span>
+        <div class="body"><h3>ディナー</h3><p>万平のメインダイニングでフレンチ、または旧軽の川上庵(蕎麦)など。重厚なホテルバーで一杯締めるのも◎。</p></div></li>
+    </ol>
+    <h2 class="day-label">二日目 ─ 南側＋買い物</h2>
+    <ol class="timeline">
+      <li class="stop"><span class="time">9:00</span><span class="node"></span>
+        <div class="body"><h3>軽井沢タリアセン</h3><p>朝食後、バスで開園に合わせて。午前の湖畔は静かで気持ちいい。</p></div></li>
+      <li class="stop"><span class="time">13:00</span><span class="node"></span>
+        <div class="body"><h3>プリンスショッピングプラザ</h3><p>荷物が増えるので買い物は最終日の最後が鉄則。</p></div></li>
+      <li class="stop"><span class="time">17:00</span><span class="node"></span>
+        <div class="body"><h3>新幹線で帰京</h3><p>お土産は駅構内でも補完できる。</p></div></li>
+    </ol>
+  </section>
+
+  <!-- ============ ④ 一泊 × 車あり ============ -->
+  <section class="panel" id="panel-stay-car">
+    <p class="plan-intro">車があると行動半径が北へ大きく広がる二日間。宿は中軽井沢の温泉付き(トンボの湯周辺)や御代田・追分方面のリーズナブルな選択肢も視野に。</p>
+    <h2 class="day-label">一日目 ─ 南から北へ</h2>
+    <ol class="timeline">
+      <li class="stop"><span class="time">9:30</span><span class="node"></span>
+        <div class="body"><h3>軽井沢タリアセン</h3><p>碓氷軽井沢ICから約15分。午前中に湖畔と美術館を。</p></div></li>
+      <li class="stop"><span class="time">12:00</span><span class="node"></span>
+        <div class="body"><h3>ハルニレテラス</h3><p>星野エリアでランチ。川沿いのデッキ席が気持ちいい。</p></div></li>
+      <li class="stop"><span class="time">14:00</span><span class="node"></span>
+        <div class="body"><h3>白糸の滝</h3><p>車で15分北上。幅70mの水のカーテン。地下水由来なので雨後でも濁らない。余力があれば旧碓氷峠の見晴台で夕景も。</p></div></li>
+      <li class="stop"><span class="time">17:00</span><span class="node"></span>
+        <div class="body"><h3>宿へ</h3><p>中軽井沢の温泉宿ならトンボの湯で汗を流してから夕食。</p></div></li>
+    </ol>
+    <h2 class="day-label">二日目 ─ 定番を仕上げる</h2>
+    <ol class="timeline">
+      <li class="stop"><span class="time">8:30</span><span class="node"></span>
+        <div class="body"><h3>雲場池</h3><p>朝の光がいちばんきれいな時間。近くのコインパーキングへ。</p></div></li>
+      <li class="stop highlight"><span class="time">10:00</span><span class="node"></span>
+        <div class="body"><h3>旧軽銀座 → 万平カフェテラス<span class="tag">John Lennon</span></h3><p>カフェは午前中に入るのがベスト。</p></div></li>
+      <li class="stop"><span class="time">13:00</span><span class="node"></span>
+        <div class="body"><h3>プリンスショッピングプラザ</h3><p>買い物はここでまとめて。</p></div></li>
+      <li class="stop"><span class="time">15:30</span><span class="node"></span>
+        <div class="body"><h3>出発</h3><p>渋滞が本格化する前(15〜16時)に高速へ。</p></div></li>
+    </ol>
+  </section>
+
+  <!-- ============ food ============ -->
+  <section class="section-block">
+    <h2 class="notes-title">ごはん</h2>
+
+    <p class="sub-label">LUNCH</p>
+    <div class="grid">
+      <div class="card">
+        <h3>川上庵 本店</h3>
+        <span class="meta">旧軽ロータリー · 蕎麦</span>
+        <p>鴨せいろと天ぷらが看板の王道。通し営業22時までで旅程が読みやすい。ピークは行列必至、11時台に。</p>
+      </div>
+      <div class="card">
+        <h3>酢重正之</h3>
+        <span class="meta">旧軽ロータリー · 信州味噌の和食</span>
+        <p>焼き魚や山賊焼きの定食が丁寧。川上庵が大行列のときの避難先としても優秀。</p>
+      </div>
+      <div class="card">
+        <h3>かぎもとや 中軽井沢本店</h3>
+        <span class="meta">中軽井沢駅前 · 蕎麦</span>
+        <p>明治創業の老舗手打ち蕎麦。観光地価格控えめで、ハルニレテラス・タリアセンとの動線上。</p>
+        <span class="fit">車プラン向き</span>
+      </div>
+      <div class="card">
+        <h3>村民食堂</h3>
+        <span class="meta">ハルニレテラス隣 · 信州料理</span>
+        <p>山賊焼きや季節の定食。星野エリアに行く日のランチはここが便利。</p>
+        <span class="fit">車プラン向き</span>
+      </div>
+      <div class="card">
+        <h3>エロイーズカフェ</h3>
+        <span class="meta">南ヶ丘 · 朝食・ブランチ</span>
+        <p>エッグベネディクトとフレンチトーストの有名店。予約制なので事前に押さえる前提で。</p>
+      </div>
+    </div>
+
+    <p class="sub-label">DINNER</p>
+    <div class="grid">
+      <div class="card">
+        <h3>ピレネー</h3>
+        <span class="meta">軽井沢本通り · 薪火グリル</span>
+        <p>店の中央の薪火でローストする肉料理。Tボーンや丸鶏＋前菜ビュッフェ。旅の「ごちそう枠」に。要予約・木曜定休。</p>
+      </div>
+      <div class="card">
+        <h3>川上庵／酢重正之</h3>
+        <span class="meta">旧軽ロータリー · 〜22:00</span>
+        <p>夜は蕎麦前＋日本酒でゆっくり。夜の川上庵は昼より並ばない。閉店の早い軽井沢で22時営業は貴重。</p>
+      </div>
+      <div class="card">
+        <h3>村民食堂</h3>
+        <span class="meta">星野エリア · 〜21:00</span>
+        <p>トンボの湯で温泉→夕食のコンボが最高。一泊プランの夜に。</p>
+        <span class="fit">一泊×車プラン向き</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ stay ============ -->
+  <section class="section-block">
+    <h2 class="notes-title">宿</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>旧軽井沢ホテル音羽ノ森</h3>
+        <span class="meta">旧軽井沢 · クラシック洋館</span>
+        <p>万平に泊まれないならここが一番「軽井沢らしい」代替。旧軽銀座・万平カフェまで徒歩圏。</p>
+        <span class="fit">車なしプランと好相性</span>
+      </div>
+      <div class="card">
+        <h3>軽井沢プリンスホテル イースト</h3>
+        <span class="meta">駅南側 · リゾート</span>
+        <p>アウトレット隣接＋温泉大浴場。立地の便利さは町内最強で、車なし一泊の実務的な正解。</p>
+        <span class="fit">車なしプランと好相性</span>
+      </div>
+      <div class="card">
+        <h3>ホテルインディゴ軽井沢</h3>
+        <span class="meta">塩沢 · デザインホテル</span>
+        <p>タリアセンのすぐ近く。大浴場＋サウナ、駅シャトルあり。評判の良さは頭ひとつ抜けている。</p>
+      </div>
+      <div class="card">
+        <h3>軽井沢マリオット</h3>
+        <span class="meta">中軽井沢の奥 · 温泉リゾート</span>
+        <p>静かな森の中で、客室露天風呂付きの部屋も。駅から遠いので車前提。</p>
+        <span class="fit">車プラン専用</span>
+      </div>
+    </div>
+    <p class="price-note">料金は時期変動が大きく、7〜8月ピークは通常期の1.5〜2倍になることも。日付を決めてから比較を。</p>
+  </section>
+
+  <!-- ============ common notes ============ -->
+  <section class="notes">
+    <h2 class="notes-title">共通メモ</h2>
+    <details>
+      <summary>バス攻略(車なしの生命線)</summary>
+      <div class="inner">
+        <p><strong>旧軽井沢方面:</strong>駅北口からバス約4分「旧軽井沢」下車。町内循環バスは必ず<strong>内回り</strong>に乗ること(外回りだと約1時間かかる)。徒歩でも駅から25〜30分。</p>
+        <p><strong>タリアセン方面:</strong>西武観光バスが北口4番乗り場から発車、「塩沢湖」下車徒歩1分・所要10〜15分。夏季は直行の「急行塩沢湖線」あり。循環バスなら大人100円だが約30分。<strong>本数が少ないので時刻表を必ず事前確認。</strong></p>
+      </div>
+    </details>
+    <details>
+      <summary>万平ホテル カフェテラス攻略</summary>
+      <div class="inner">
+        <p>営業9:30〜18:00、<strong>席の予約は不可</strong>。13〜17時のピークは入店待ちになりがち。LINE友達登録でホテル3km圏内から順番待ち登録ができるので、旧軽銀座を歩きながら登録しておくのが賢い。</p>
+        <p>ジョン・レノンは1976〜79年に毎夏滞在。彼がレシピを教えたロイヤルミルクティーと、信州産紅玉のアップルパイが定番。</p>
+      </div>
+    </details>
+    <details>
+      <summary>季節と持ち物</summary>
+      <div class="inner">
+        <p>7月中旬〜はハイシーズン。週末の旧軽銀座とアウトレットはかなり混むので、日程が選べるなら平日が快適。</p>
+        <p>標高約1,000mで夏でも朝晩は20℃を切ることがある。<strong>羽織りものを一枚。</strong>カメラ派なら雲場池の朝、万平ホテルの内装(赤絨毯とステンドグラス)、タリアセンの睡鳩荘が鉄板の被写体。</p>
+      </div>
+    </details>
+  </section>
+
+  <footer>KARUIZAWA · NAGANO · ALT. 940m</footer>
+</div>
+
+<script>
+(function(){
+  var state = { duration: "day", transport: "nocar" };
+  var names = {
+    "day-nocar":  "PLAN 01 — 新幹線とバスで巡る一日",
+    "day-car":    "PLAN 02 — 南から北へ、ドライブ日帰り",
+    "stay-nocar": "PLAN 03 — 万平ホテルに泊まる二日間",
+    "stay-car":   "PLAN 04 — 白糸の滝まで足を伸ばす二日間"
+  };
+
+  function render(){
+    var key = state.duration + "-" + state.transport;
+    document.querySelectorAll(".panel").forEach(function(p){
+      p.classList.toggle("active", p.id === "panel-" + key);
+    });
+    document.getElementById("plan-name").textContent = names[key];
+  }
+
+  function bindAxis(id, prop){
+    var axis = document.getElementById(id);
+    axis.querySelectorAll("button").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        axis.querySelectorAll("button").forEach(function(b){
+          b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+        });
+        state[prop] = btn.dataset.value;
+        render();
+      });
+    });
+  }
+
+  bindAxis("axis-duration", "duration");
+  bindAxis("axis-transport", "transport");
+})();
+</script>
+</body>
+</html>
