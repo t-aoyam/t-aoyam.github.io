@@ -12,9 +12,11 @@ papers:
   - title: "Global PIQA: Evaluating Physical Commonsense Reasoning Across 100+ Languages and Cultures"
     year: "2025"
     authors: "Tyler A Chang, Catherine Arnett, ..., Tatsuya Aoyama, ..."
-    venue: "arXiv."
+    venue: "The 40th Annual Conference on Neural Information Processing Systems (NeurIPS 2026)."
     paper_pdf: https://arxiv.org/abs/2510.24081
     code: https://github.com/mrlbenchmarks/global-piqa
+    venue_icon: "NeurIPS"
+
 #    video:
     nlp: y
     selected: n
