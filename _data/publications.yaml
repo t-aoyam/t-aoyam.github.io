@@ -15,12 +15,10 @@ papers:
     venue: "The 40th Annual Conference on Neural Information Processing Systems (NeurIPS 2026)."
     paper_pdf: https://arxiv.org/abs/2510.24081
     code: https://github.com/mrlbenchmarks/global-piqa
-    venue_icon: "NeurIPS"
-
 #    video:
     nlp: y
     selected: n
-    venue_icon: "arXiv"
+    venue_icon: "NeurIPS"
 
   - title: "Predicting the Formation of Induction Heads."
     year: "2025"
